@@ -1,10 +1,32 @@
-body, html {
+body,
+html {
   margin: 0
 }
 
-body {
-  height: 100vh;
+
+
+.shrink {
+  width: 25px !important;
+  opacity: 0;
 }
+
+
+#connect-button {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 5%;
+  width: 20%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  white-space: nowrap;
+  transition:
+    width 250ms ease-out,
+    opacity 250ms ease-out;
+}
+
+
 
 #gray-background {
   height: 100vh;
@@ -19,23 +41,56 @@ body {
 #wallet-selection {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   position: fixed;
   border: 1px solid black;
-  width: 25%;
   top: 50%;
   left: 50%;
+  border-radius: 10px;
+  width: 25%;
   transform: translate(-50%, -50%);
+  background-color: white;
+  transition:
+    width 250ms ease-out,
+    opacity 250ms ease-out;
 }
+
+
 
 .wallet-button {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  border: 1px solid black;
+  justify-content: space-around;
   padding: 5%;
+  text-align: center;
+  font-size: 25px;
+  transition:
+    width 250ms ease-out,
+    opacity 250ms ease-out;
+}
+
+.wallet-button:hover {
+  background-color: rgba(131, 131, 219, 0.199);
+}
+
+.wallet-button p {
+  min-width: 25%;
+  text-transform: capitalize;
 }
 
 .wallet-icon {
-  width: 50px;
-  height: 50px;
+  height: 15%;
+  border-radius: 15px;
+  width: 15%;
+  align-self: center;
+  transition:
+    width 250ms ease-out,
+    opacity 250ms ease-out;
+}
+
+
+@media (max-width: 800px) {
+  #wallet-selection {
+    width: 75%;
+  }
 }
