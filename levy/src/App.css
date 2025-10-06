@@ -4,10 +4,15 @@ html {
 
 }
 
+
 #root {
   height: 100vh;
   background: linear-gradient(#a01a58 0%, #0091ad);
 
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
 
