@@ -11,7 +11,6 @@ export default function WalletModal({ selectingWallet, setSelectingWallet }: Pro
   const { wallets } = useWallet();
 
     return (
-
         <>
           <button
             id='connect-button'
@@ -21,7 +20,6 @@ export default function WalletModal({ selectingWallet, setSelectingWallet }: Pro
           </button>
 
           <>
-            <div id='gray-background'></div>
             <div id='wallet-selection'
               className={selectingWallet ? '' : 'shrink'}>
               {wallets.map((wallet) =>
