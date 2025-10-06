@@ -1,0 +1,1 @@
+algokit compile py python/contract.py --output-arc56 --out-dir contract_files; algokitgen-py -a 'python/contract_files/Levy.arc56.json' -o 'python/contract_files/LevyClient.py'
