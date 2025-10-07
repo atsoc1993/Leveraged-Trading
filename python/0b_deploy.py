@@ -1,8 +1,7 @@
-from constants import levy_factory, dotenv_path, algorand, master_account
+from constants import levy_factory, dotenv_path, vite_dotenv_path, algorand, master_account
 from algokit_utils import PaymentParams, AlgoAmount
 from dotenv import load_dotenv, set_key
 
-load_dotenv(dotenv_path=dotenv_path)
 
 print(f'Creating Leverage App . . .')
 levy_client, deploy_response = levy_factory.send.create.bare()
@@ -10,6 +9,11 @@ print(f'Created Leverage App.')
 set_key(
     dotenv_path=dotenv_path, 
     key_to_set='levy_app_id', 
+    value_to_set=str(levy_client.app_id)
+)
+set_key(
+    dotenv_path=vite_dotenv_path, 
+    key_to_set='VITE_LEVY_APP_ID', 
     value_to_set=str(levy_client.app_id)
 )
 

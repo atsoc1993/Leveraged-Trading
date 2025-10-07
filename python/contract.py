@@ -7,8 +7,8 @@ class UserLeverageBoxName(Struct):
 
 class UserLeverageBoxValue(Struct):
     algo_deposit: arc4.UInt64
-    leverage: arc4.UInt8
     asset_amount: arc4.UInt64
+    leverage: arc4.UInt8
 
 class Levy(ARC4Contract):
     def __init__(self) -> None:

@@ -6,7 +6,9 @@ import json
 import os
 
 dotenv_path = './.env'
+vite_dotenv_path = './levy/.env'
 load_dotenv(dotenv_path=dotenv_path)
+load_dotenv(dotenv_path=vite_dotenv_path)
 
 algorand = AlgorandClient.testnet()
 
