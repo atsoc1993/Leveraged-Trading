@@ -140,14 +140,14 @@ create_position:
     assert // transaction type is pay
     txna ApplicationArgs 1
     txna ApplicationArgs 2
-    // python/contract.py:53
+    // python/contract.py:59
     // assert payment.receiver == Global.current_application_address
     dig 2
     gtxns Receiver
     global CurrentApplicationAddress
     ==
     assert
-    // python/contract.py:54
+    // python/contract.py:60
     // assert payment.amount >= 1_000_000, "Minimum 1 Algo Deposit"
     uncover 2
     gtxns Amount
@@ -155,72 +155,72 @@ create_position:
     pushint 1000000 // 1000000
     >=
     assert // Minimum 1 Algo Deposit
-    // python/contract.py:37
-    // leverage_amount = algo_deposit.amount * leverage.native
+    // python/contract.py:36
+    // leverage_amount = algo_deposit.amount * leverage.as_uint64()
     dig 2
     btoi
     dig 1
     *
-    // python/contract.py:59
+    // python/contract.py:65
     // pool_address = self.get_logicsig_address(asset)
     dig 2
     callsub get_logicsig_address
-    // python/contract.py:73
+    // python/contract.py:79
     // app_id=self.tinyman_router,
     intc_0 // 0
     bytec_0 // "tinyman_router"
     app_global_get_ex
     assert // check self.tinyman_router exists
-    // python/contract.py:77
-    // assets=(Asset(asset.native),)
+    // python/contract.py:83
+    // assets=(Asset(asset.as_uint64()),)
     dig 4
     btoi
-    // python/contract.py:80
+    // python/contract.py:86
     // tx_1, tx_2 = itxn.submit_txns(purchase_entry_asset, entry_asset_buy)
     itxn_begin
     uncover 3
     itxn_field Amount
     dig 2
     itxn_field Receiver
-    // python/contract.py:67
+    // python/contract.py:73
     // purchase_entry_asset = itxn.Payment(
     intc_1 // pay
     itxn_field TypeEnum
     intc_0 // 0
     itxn_field Fee
-    // python/contract.py:80
+    // python/contract.py:86
     // tx_1, tx_2 = itxn.submit_txns(purchase_entry_asset, entry_asset_buy)
     itxn_next
     itxn_field Assets
     swap
     itxn_field Accounts
-    // python/contract.py:61
+    // python/contract.py:67
     // arg_1 = Bytes(b'swap')
     bytec_2 // 0x73776170
     itxn_field ApplicationArgs
-    // python/contract.py:62
+    // python/contract.py:68
     // arg_2 = Bytes(b'fixed-input')
     bytec_3 // 0x66697865642d696e707574
     itxn_field ApplicationArgs
-    // python/contract.py:63
+    // python/contract.py:69
     // arg_3 = arc4.UInt64(0).bytes
     bytec_1 // 0x0000000000000000
     itxn_field ApplicationArgs
-    // python/contract.py:74
+    // python/contract.py:80
     // on_completion=OnCompleteAction.NoOp,
     intc_0 // NoOp
     itxn_field OnCompletion
     itxn_field ApplicationID
-    // python/contract.py:72
+    // python/contract.py:78
     // entry_asset_buy = itxn.ApplicationCall(
     pushint 6 // appl
     itxn_field TypeEnum
     intc_0 // 0
     itxn_field Fee
-    // python/contract.py:80
+    // python/contract.py:86
     // tx_1, tx_2 = itxn.submit_txns(purchase_entry_asset, entry_asset_buy)
     itxn_submit
-    // python/contract.py:82
+    // python/contract.py:88
     // asset_amount = arc4.UInt64.from_bytes(tx_2.logs(5)[-8:])
     itxna Logs 5
     dup
@@ -237,22 +237,22 @@ create_position:
     -
     swap
     substring3
-    // python/contract.py:40
+    // python/contract.py:45
     // user=Address(Txn.sender),
     txn Sender
-    // python/contract.py:39-42
-    // user_box_name = UserLeverageBoxName(
+    // python/contract.py:44-47
+    // return UserLeverageBoxName(
     //     user=Address(Txn.sender),
     //     asset=asset
     // )
     uncover 3
     concat
-    // python/contract.py:44
+    // python/contract.py:52
     // algo_deposit=arc4.UInt64(algo_deposit.amount),
     uncover 2
     itob
-    // python/contract.py:43-47
-    // user_box_value = UserLeverageBoxValue(
+    // python/contract.py:51-55
+    // return UserLeverageBoxValue(
     //     algo_deposit=arc4.UInt64(algo_deposit.amount),
     //     leverage=leverage,
     //     asset_amount=purchased_amount
@@ -261,7 +261,7 @@ create_position:
     concat
     uncover 2
     concat
-    // python/contract.py:49
+    // python/contract.py:40
     // self.user_leveraged_positions[user_box_name] = user_box_value.copy()
     box_put
     // python/contract.py:33
@@ -272,66 +272,66 @@ create_position:
 
 // contract.Levy.check_position[routing]() -> void:
 check_position:
-    // python/contract.py:100
+    // python/contract.py:106
     // @abimethod
     txna ApplicationArgs 1
-    // python/contract.py:102
+    // python/contract.py:108
     // assert Txn.sender == Global.creator_address
     txn Sender
     global CreatorAddress
     ==
     assert
-    // python/contract.py:103
+    // python/contract.py:109
     // leverage_box_value = self.user_leveraged_positions[user_box_name].copy()
     dup
     box_get
     assert // check self.user_leveraged_positions entry exists
-    // python/contract.py:104
-    // initial_algo_amount = leverage_box_value.algo_deposit.native
+    // python/contract.py:110
+    // initial_algo_amount = leverage_box_value.algo_deposit.as_uint64()
     dup
     intc_0 // 0
     extract_uint64
     dup
     cover 3
     cover 3
-    // python/contract.py:105
-    // leverage = leverage_box_value.leverage.native
+    // python/contract.py:111
+    // leverage = leverage_box_value.leverage.as_uint64()
     dup
     pushint 16 // 16
     getbyte
     dup
     cover 3
     cover 4
-    // python/contract.py:108
+    // python/contract.py:114
     // pool_address = self.get_logicsig_address(user_box_name.asset)
     dig 1
     extract 32 8
     callsub get_logicsig_address
-    // python/contract.py:111
-    // xfer_asset=user_box_name.asset.native,
+    // python/contract.py:117
+    // xfer_asset=user_box_name.asset.as_uint64(),
     uncover 2
-    // python/contract.py:108
+    // python/contract.py:114
     // pool_address = self.get_logicsig_address(user_box_name.asset)
     pushint 32 // 32
-    // python/contract.py:111
-    // xfer_asset=user_box_name.asset.native,
+    // python/contract.py:117
+    // xfer_asset=user_box_name.asset.as_uint64(),
     extract_uint64
-    // python/contract.py:112
-    // asset_amount=asset_holdings_amount.native,
+    // python/contract.py:118
+    // asset_amount=asset_holdings_amount.as_uint64(),
     uncover 2
-    // python/contract.py:106
+    // python/contract.py:112
     // asset_holdings_amount = leverage_box_value.asset_amount
     intc_2 // 8
-    // python/contract.py:112
-    // asset_amount=asset_holdings_amount.native,
+    // python/contract.py:118
+    // asset_amount=asset_holdings_amount.as_uint64(),
     extract_uint64
-    // python/contract.py:121
+    // python/contract.py:127
     // app_id=self.tinyman_router,
     intc_0 // 0
     bytec_0 // "tinyman_router"
     app_global_get_ex
     assert // check self.tinyman_router exists
-    // python/contract.py:128
+    // python/contract.py:134
     // tx_1, tx_2 = itxn.submit_txns(sell_asset, asset_sell)
     itxn_begin
     dig 3
@@ -340,47 +340,47 @@ check_position:
     itxn_field AssetAmount
     dig 1
     itxn_field XferAsset
-    // python/contract.py:110
+    // python/contract.py:116
     // sell_asset = itxn.AssetTransfer(
     intc_3 // axfer
     itxn_field TypeEnum
     intc_0 // 0
     itxn_field Fee
-    // python/contract.py:128
+    // python/contract.py:134
     // tx_1, tx_2 = itxn.submit_txns(sell_asset, asset_sell)
     itxn_next
     swap
     itxn_field Assets
     swap
     itxn_field Accounts
-    // python/contract.py:116
+    // python/contract.py:122
     // arg_1 = Bytes(b'swap')
     bytec_2 // 0x73776170
     itxn_field ApplicationArgs
-    // python/contract.py:117
+    // python/contract.py:123
     // arg_2 = Bytes(b'fixed-input')
     bytec_3 // 0x66697865642d696e707574
     itxn_field ApplicationArgs
-    // python/contract.py:118
+    // python/contract.py:124
     // arg_3 = arc4.UInt64(0).bytes
     bytec_1 // 0x0000000000000000
     itxn_field ApplicationArgs
-    // python/contract.py:122
+    // python/contract.py:128
     // on_completion=OnCompleteAction.NoOp,
     intc_0 // NoOp
     itxn_field OnCompletion
     itxn_field ApplicationID
-    // python/contract.py:120
+    // python/contract.py:126
     // asset_sell = itxn.ApplicationCall(
     pushint 6 // appl
     itxn_field TypeEnum
     intc_0 // 0
     itxn_field Fee
-    // python/contract.py:128
+    // python/contract.py:134
     // tx_1, tx_2 = itxn.submit_txns(sell_asset, asset_sell)
     itxn_submit
-    // python/contract.py:130
-    // algo_received_if_position_closed = arc4.UInt64.from_bytes(tx_2.logs(5)[-8:]).native
+    // python/contract.py:136
+    // algo_received_if_position_closed = arc4.UInt64.from_bytes(tx_2.logs(5)[-8:]).as_uint64()
     itxna Logs 5
     dup
     len
@@ -399,20 +399,20 @@ check_position:
     btoi
     dup
     cover 3
-    // python/contract.py:132
+    // python/contract.py:138
     // initial_position = initial_algo_amount * leverage
     cover 2
     *
     dup
     uncover 2
-    // python/contract.py:136
+    // python/contract.py:142
     // scaled_position = algo_received_if_position_closed * self.scaled_base_percentage
     intc_0 // 0
     bytec 6 // "scaled_base_percentage"
     app_global_get_ex
     assert // check self.scaled_base_percentage exists
     *
-    // python/contract.py:137
+    // python/contract.py:143
     // scaled_liquidation_threshold = initial_position * self.liquidation_threshold
     intc_0 // 0
     bytec 5 // "liquidation_threshold"
@@ -420,16 +420,16 @@ check_position:
     assert // check self.liquidation_threshold exists
     uncover 2
     *
-    // python/contract.py:139
+    // python/contract.py:145
     // if scaled_position <= scaled_liquidation_threshold:
     <=
     bz check_position_else_body@5
-    // python/contract.py:140
+    // python/contract.py:146
     // return True, algo_received_if_position_closed, initial_algo_amount, initial_position, leverage
     intc_1 // 1
 
 check_position_after_inlined_contract.Levy.check_position@6:
-    // python/contract.py:100
+    // python/contract.py:106
     // @abimethod
     pushbytes 0x00
     intc_0 // 0
@@ -455,10 +455,10 @@ check_position_after_inlined_contract.Levy.check_position@6:
     return
 
 check_position_else_body@5:
-    // python/contract.py:142
+    // python/contract.py:148
     // return False, algo_received_if_position_closed, initial_algo_amount, initial_position, leverage
     intc_0 // 0
-    // python/contract.py:100
+    // python/contract.py:106
     // @abimethod
     b check_position_after_inlined_contract.Levy.check_position@6
 
@@ -467,62 +467,52 @@ check_position_else_body@5:
 liquidate:
     pushbytes ""
     dup
-    // python/contract.py:145
+    // python/contract.py:151
     // @abimethod
     txna ApplicationArgs 1
     dup
-    // python/contract.py:147
+    // python/contract.py:153
     // assert Txn.sender == Global.creator_address
     txn Sender
     global CreatorAddress
     ==
     assert
-    // python/contract.py:148
-    // leverage_box_value = self.user_leveraged_positions[user_box_name].copy()
+    // python/contract.py:154
+    // user_box_value = self.user_leveraged_positions[user_box_name].copy()
     dup
     box_get
     assert // check self.user_leveraged_positions entry exists
-    // python/contract.py:149
-    // initial_algo_amount = leverage_box_value.algo_deposit.native
-    dup
-    intc_0 // 0
-    extract_uint64
-    // python/contract.py:150
-    // leverage = leverage_box_value.leverage.native
-    dig 1
-    pushint 16 // 16
-    getbyte
-    // python/contract.py:153
+    // python/contract.py:171
     // pool_address = self.get_logicsig_address(user_box_name.asset)
-    dig 3
+    dig 1
     extract 32 8
     callsub get_logicsig_address
-    // python/contract.py:156
-    // xfer_asset=user_box_name.asset.native,
-    uncover 4
-    // python/contract.py:153
+    // python/contract.py:175
+    // xfer_asset=user_box_name.asset.as_uint64(),
+    uncover 2
+    // python/contract.py:171
     // pool_address = self.get_logicsig_address(user_box_name.asset)
     pushint 32 // 32
-    // python/contract.py:156
-    // xfer_asset=user_box_name.asset.native,
+    // python/contract.py:175
+    // xfer_asset=user_box_name.asset.as_uint64(),
     extract_uint64
-    // python/contract.py:157
-    // asset_amount=asset_holdings_amount.native,
-    uncover 4
-    // python/contract.py:151
-    // asset_holdings_amount = leverage_box_value.asset_amount
+    // python/contract.py:176
+    // asset_amount=asset_holdings_amount.as_uint64(),
+    dig 2
+    // python/contract.py:172
+    // asset_holdings_amount = user_box_value.asset_amount
     intc_2 // 8
-    // python/contract.py:157
-    // asset_amount=asset_holdings_amount.native,
+    // python/contract.py:176
+    // asset_amount=asset_holdings_amount.as_uint64(),
     extract_uint64
-    // python/contract.py:166
+    // python/contract.py:185
     // app_id=self.tinyman_router,
     intc_0 // 0
     bytec_0 // "tinyman_router"
     app_global_get_ex
     assert // check self.tinyman_router exists
-    // python/contract.py:173
-    // tx_1, tx_2 = itxn.submit_txns(sell_asset, asset_sell)
+    // python/contract.py:192
+    // sell_asset_axfer_result, sell_asset_app_call_result = itxn.submit_txns(sell_asset, asset_sell)
     itxn_begin
     dig 3
     itxn_field AssetReceiver
@@ -530,47 +520,47 @@ liquidate:
     itxn_field AssetAmount
     dig 1
     itxn_field XferAsset
-    // python/contract.py:155
+    // python/contract.py:174
     // sell_asset = itxn.AssetTransfer(
     intc_3 // axfer
     itxn_field TypeEnum
     intc_0 // 0
     itxn_field Fee
-    // python/contract.py:173
-    // tx_1, tx_2 = itxn.submit_txns(sell_asset, asset_sell)
+    // python/contract.py:192
+    // sell_asset_axfer_result, sell_asset_app_call_result = itxn.submit_txns(sell_asset, asset_sell)
     itxn_next
     swap
     itxn_field Assets
     swap
     itxn_field Accounts
-    // python/contract.py:161
+    // python/contract.py:180
     // arg_1 = Bytes(b'swap')
     bytec_2 // 0x73776170
     itxn_field ApplicationArgs
-    // python/contract.py:162
+    // python/contract.py:181
     // arg_2 = Bytes(b'fixed-input')
     bytec_3 // 0x66697865642d696e707574
     itxn_field ApplicationArgs
-    // python/contract.py:163
+    // python/contract.py:182
     // arg_3 = arc4.UInt64(0).bytes
     bytec_1 // 0x0000000000000000
     itxn_field ApplicationArgs
-    // python/contract.py:167
+    // python/contract.py:186
     // on_completion=OnCompleteAction.NoOp,
     intc_0 // NoOp
     itxn_field OnCompletion
     itxn_field ApplicationID
-    // python/contract.py:165
+    // python/contract.py:184
     // asset_sell = itxn.ApplicationCall(
     pushint 6 // appl
     itxn_field TypeEnum
     intc_0 // 0
     itxn_field Fee
-    // python/contract.py:173
-    // tx_1, tx_2 = itxn.submit_txns(sell_asset, asset_sell)
+    // python/contract.py:192
+    // sell_asset_axfer_result, sell_asset_app_call_result = itxn.submit_txns(sell_asset, asset_sell)
     itxn_submit
-    // python/contract.py:175
-    // algo_received_after_closing_position = arc4.UInt64.from_bytes(tx_2.logs(5)[-8:]).native
+    // python/contract.py:193
+    // return arc4.UInt64.from_bytes(sell_asset_app_call_result.logs(5)[-8:]).as_uint64()
     itxna Logs 5
     dup
     len
@@ -588,44 +578,53 @@ liquidate:
     substring3
     btoi
     dup
-    cover 3
-    // python/contract.py:177
-    // initial_position = initial_algo_amount * leverage
-    dig 2
+    cover 2
+    // python/contract.py:204
+    // initial_algo_amount = user_box_value.algo_deposit.as_uint64()
+    dig 1
+    intc_0 // 0
+    extract_uint64
+    // python/contract.py:205
+    // leverage = user_box_value.leverage.as_uint64()
     uncover 2
+    pushint 16 // 16
+    getbyte
+    // python/contract.py:207
+    // initial_position = initial_algo_amount * leverage
+    dig 1
     *
     dup
     cover 3
-    // python/contract.py:178
+    // python/contract.py:208
     // debt = initial_position - initial_algo_amount
-    dig 2
+    dig 1
     -
     cover 2
-    // python/contract.py:180
+    // python/contract.py:210
     // if algo_received_after_closing_position < initial_algo_amount:
-    >
+    <
     bz liquidate_else_body@5
-    // python/contract.py:181
+    // python/contract.py:211
     // del self.user_leveraged_positions[user_box_name]
     dig 3
     box_del
     pop
 
-liquidate_after_if_else@10:
-    // python/contract.py:145
+liquidate_after_if_else@8:
+    // python/contract.py:151
     // @abimethod
     intc_1 // 1
     return
 
 liquidate_else_body@5:
-    // python/contract.py:184
+    // python/contract.py:214
     // user_remaining_funds = algo_received_after_closing_position - debt
     dig 2
     dig 1
     -
     dup
     bury 6
-    // python/contract.py:185
+    // python/contract.py:215
     // fee = (initial_position * self.fee) // 10_000
     intc_0 // 0
     bytec 7 // "fee"
@@ -637,63 +636,63 @@ liquidate_else_body@5:
     /
     dup
     bury 8
-    // python/contract.py:186
+    // python/contract.py:216
     // if fee > user_remaining_funds:
     <
     bz liquidate_else_body@7
-    // python/contract.py:187
+    // python/contract.py:217
     // del self.user_leveraged_positions[user_box_name]
     dig 3
     box_del
     pop
-    b liquidate_after_if_else@10
+    b liquidate_after_if_else@8
 
 liquidate_else_body@7:
-    // python/contract.py:189-192
+    // python/contract.py:219-222
     // itxn.Payment(
     //     receiver=user_box_name.user.native,
     //     amount=user_remaining_funds - fee
     // ).submit()
     itxn_begin
-    // python/contract.py:190
+    // python/contract.py:220
     // receiver=user_box_name.user.native,
     dig 3
     extract 0 32
-    // python/contract.py:191
+    // python/contract.py:221
     // amount=user_remaining_funds - fee
     dig 5
     dig 7
     -
     itxn_field Amount
     itxn_field Receiver
-    // python/contract.py:189
+    // python/contract.py:219
     // itxn.Payment(
     intc_1 // pay
     itxn_field TypeEnum
     intc_0 // 0
     itxn_field Fee
-    // python/contract.py:189-192
+    // python/contract.py:219-222
     // itxn.Payment(
     //     receiver=user_box_name.user.native,
     //     amount=user_remaining_funds - fee
     // ).submit()
     itxn_submit
-    b liquidate_after_if_else@10
+    b liquidate_after_if_else@8
 
 
 // contract.Levy.get_logicsig_address(asset: bytes) -> bytes:
 get_logicsig_address:
-    // python/contract.py:85-86
+    // python/contract.py:91-92
     // @subroutine
     // def get_logicsig_address(self, asset: arc4.UInt64) -> Account:
     proto 1 1
-    // python/contract.py:87
+    // python/contract.py:93
     // program_bytes = self.pool_logicsig_template
     intc_0 // 0
     bytec 4 // "pool_logicsig_template"
     app_global_get_ex
     assert // check self.pool_logicsig_template exists
-    // python/contract.py:90
+    // python/contract.py:96
     // program_bytes[0:3] +
     dup
     len
@@ -714,33 +713,33 @@ get_logicsig_address:
     dig 3
     cover 2
     substring3
-    // python/contract.py:91
+    // python/contract.py:97
     // arc4.UInt64(self.tinyman_router).bytes +
     intc_0 // 0
     bytec_0 // "tinyman_router"
     app_global_get_ex
     assert // check self.tinyman_router exists
     itob
-    // python/contract.py:90-91
+    // python/contract.py:96-97
     // program_bytes[0:3] +
     // arc4.UInt64(self.tinyman_router).bytes +
     concat
-    // python/contract.py:90-92
+    // python/contract.py:96-98
     // program_bytes[0:3] +
     // arc4.UInt64(self.tinyman_router).bytes +
     // asset.bytes +
     frame_dig -1
     concat
-    // python/contract.py:93
+    // python/contract.py:99
     // arc4.UInt64(0).bytes +
     bytec_1 // 0x0000000000000000
-    // python/contract.py:90-93
+    // python/contract.py:96-99
     // program_bytes[0:3] +
     // arc4.UInt64(self.tinyman_router).bytes +
     // asset.bytes +
     // arc4.UInt64(0).bytes +
     concat
-    // python/contract.py:94
+    // python/contract.py:100
     // program_bytes[27:]
     pushint 27 // 27
     dig 2
@@ -753,14 +752,14 @@ get_logicsig_address:
     swap
     uncover 3
     substring3
-    // python/contract.py:90-94
+    // python/contract.py:96-100
     // program_bytes[0:3] +
     // arc4.UInt64(self.tinyman_router).bytes +
     // asset.bytes +
     // arc4.UInt64(0).bytes +
     // program_bytes[27:]
     concat
-    // python/contract.py:97
+    // python/contract.py:103
     // return Account.from_bytes(op.sha512_256(b'Program' + program_bytes))
     pushbytes 0x50726f6772616d
     swap

@@ -1,11 +1,9 @@
 import { AlgorandClient } from "@algorandfoundation/algokit-utils";
 import { LevyClient } from './clients/LevyClient.ts';
-import { useWallet } from '@txnlab/use-wallet-react';
-import { ABIType } from "algosdk";
+import { ABIType, type TransactionSigner } from "algosdk";
 
 const LEVY_APP_ID = import.meta.env.VITE_LEVY_APP_ID;
 
-const { activeAddress, transactionSigner } = useWallet();
 
 export type LeveragedPosition = {
     userAddress: string,
@@ -19,7 +17,7 @@ const getAlgorandClient = (): AlgorandClient => {
     return AlgorandClient.mainNet();
 };
 
-const getLevyAppClient = (algorand: AlgorandClient): LevyClient => {
+const getLevyAppClient = (algorand: AlgorandClient, activeAddress: string, transactionSigner: TransactionSigner): LevyClient => {
     return algorand.client.getTypedAppClientById(LevyClient,
         {
             appId: LEVY_APP_ID,
@@ -32,14 +30,14 @@ const getLevyAppClient = (algorand: AlgorandClient): LevyClient => {
 const leverageBoxNameStruct = ABIType.from('(address,uint64)')
 const leverageBoxValueStruct = ABIType.from('(uint64,uint64,uint8)')
 
-const getUserPositions = async (): Promise<LeveragedPosition[]> => {
+const getUserPositions = async (activeAddress: string): Promise<LeveragedPosition[]> => {
     const algorand = getAlgorandClient();
     const boxNames = await algorand.app.getBoxNames(LEVY_APP_ID);
 
     const boxNamesRaw = boxNames.map((box) => box.nameRaw);
 
     const usersBoxNames = boxNamesRaw
-    .filter((box) => leverageBoxNameStruct.decode(box) as [string, bigint][0] === activeAddress);
+        .filter((box) => leverageBoxNameStruct.decode(box) as [string, bigint][0] === activeAddress);
 
     if (usersBoxNames.length > 0) {
 
@@ -62,15 +60,22 @@ const getUserPositions = async (): Promise<LeveragedPosition[]> => {
         })
 
         return usersPositionsInfo;
-    };''
+    }; ''
     return [];
 };
 
-const createPosition = async (algoDepositAmount: number, asset: bigint, leverage: number): Promise<string> => {
+const createPosition = async (
+    activeAddress: string,
+    transactionSigner: TransactionSigner,
+    algoDepositAmount: number,
+    asset: bigint,
+    leverage: number
+): Promise<string> => {
+
     if (!activeAddress) return ''
 
     const algorand = getAlgorandClient();
-    const levyClient = getLevyAppClient(algorand);
+    const levyClient = getLevyAppClient(algorand, activeAddress, transactionSigner);
 
     const algoDeposit = algorand.createTransaction.payment({
         amount: algoDepositAmount.microAlgo(),
@@ -91,7 +96,7 @@ const createPosition = async (algoDepositAmount: number, asset: bigint, leverage
     });
 
     return txnResponse.txIds[0];
-}
+};
 
 export {
     getUserPositions,

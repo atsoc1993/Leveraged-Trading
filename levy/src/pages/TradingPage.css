@@ -1,0 +1,140 @@
+#create-new-position-button {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    height: 5%;
+    width: 25%;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: #50589C;
+    box-shadow: 5px 5px 5px #6E8CFB;
+    white-space: nowrap;
+    color: white;
+    align-content: center;
+    text-align: center;
+    transition:
+        height 250ms ease-out,
+        width 250ms ease-out;
+}
+
+#create-new-position-button:hover {
+    height: 7%;
+    width: 30%;
+}
+
+#create-new-position-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 30%;
+    padding: 2%;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background-color: #50589C;
+    box-shadow: 5px 5px 5px #6E8CFB;
+    z-index: 1;
+}
+
+#asset-selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    width: fit-content;
+    margin-top: 2%;
+}
+
+#asset-selection p {
+    font-weight: bold;
+    margin: 0;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#asset-options-outer {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #6E8CFB;
+    display: inline-block;
+    width: fit-content;
+}
+
+#asset-options-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: fit-content;
+}
+
+#asset-options {
+    background-color: #6E8CFB;
+    width: 200px;
+}
+
+
+#asset-options-wrapper.selecting {
+    height: 40px;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+#asset-option-wrapper {
+    padding-left: 50%;
+    z-index: 20;
+}
+
+#asset-option-wrapper:hover {
+    background-color: rgba(25, 25, 196, 0.199) !important;
+}
+.asset-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: left;
+    width: 100%;
+    min-height: 40px;
+    height: 100%;
+    transform: translate(-50%, 0%);
+}
+
+
+.asset-option p {
+    margin: 0 !important;
+    font-weight: normal !important;
+}
+
+
+.asset-icon {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#gray-background {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(104, 90, 90, 0.699);
+    width: 100vw;
+    z-index: 1;
+}
+
+#position-grid {
+    position: fixed;
+    top: 15%;
+    display: grid;
+    justify-self: center;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+
+}
+
+#no-positions {
+    text-align: center;
+}

@@ -2,6 +2,7 @@ import { useWallet } from '@txnlab/use-wallet-react'
 import { useState } from 'react';
 import './App.css'
 import WalletModal from './components/WalletModal';
+import TradingPage from './pages/TradingPage';
 
 export default function App() {
 
@@ -13,8 +14,7 @@ export default function App() {
     <>
       {!activeAddress ? 
       <WalletModal selectingWallet={selectingWallet} setSelectingWallet={setSelectingWallet}/>
-
-    : <h1>Wallet Connected: {activeAddress}</h1>
+    : <TradingPage/>
     }
     </>
   )

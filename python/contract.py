@@ -33,21 +33,27 @@ class Levy(ARC4Contract):
     @abimethod
     def create_position(self, algo_deposit: gtxn.PaymentTransaction, leverage: arc4.UInt8, asset: arc4.UInt64) -> None:
         self.validate_payment(algo_deposit)
-
-        leverage_amount = algo_deposit.amount * leverage.native
+        leverage_amount = algo_deposit.amount * leverage.as_uint64()
         purchased_amount = self.purchase_asset(algo_amount=leverage_amount, asset=asset)
-        user_box_name = UserLeverageBoxName(
+        user_box_name = self.getBoxName(asset)
+        user_box_value = self.getBoxValue(algo_deposit, leverage, purchased_amount)
+        self.user_leveraged_positions[user_box_name] = user_box_value.copy()
+
+    @subroutine
+    def getBoxName(self, asset: arc4.UInt64) -> UserLeverageBoxName:
+        return UserLeverageBoxName(
             user=Address(Txn.sender),
             asset=asset
         )
-        user_box_value = UserLeverageBoxValue(
+    
+    @subroutine
+    def getBoxValue(self, algo_deposit: gtxn.PaymentTransaction, leverage: arc4.UInt8, purchased_amount: arc4.UInt64) -> UserLeverageBoxValue:
+        return UserLeverageBoxValue(
             algo_deposit=arc4.UInt64(algo_deposit.amount),
             leverage=leverage,
             asset_amount=purchased_amount
         )
-
-        self.user_leveraged_positions[user_box_name] = user_box_value.copy()
-
+    
     @subroutine
     def validate_payment(self, payment: gtxn.PaymentTransaction) -> None:
         assert payment.receiver == Global.current_application_address
@@ -74,7 +80,7 @@ class Levy(ARC4Contract):
             on_completion=OnCompleteAction.NoOp,
             app_args=args,
             accounts=(pool_address,),
-            assets=(Asset(asset.native),)
+            assets=(Asset(asset.as_uint64()),)
         )
 
         tx_1, tx_2 = itxn.submit_txns(purchase_entry_asset, entry_asset_buy)
@@ -101,15 +107,15 @@ class Levy(ARC4Contract):
     def check_position(self, user_box_name: UserLeverageBoxName) -> tuple[bool, UInt64, UInt64, UInt64, UInt64]: #return whether to liquidate and the current value
         assert Txn.sender == Global.creator_address
         leverage_box_value = self.user_leveraged_positions[user_box_name].copy()
-        initial_algo_amount = leverage_box_value.algo_deposit.native
-        leverage = leverage_box_value.leverage.native
+        initial_algo_amount = leverage_box_value.algo_deposit.as_uint64()
+        leverage = leverage_box_value.leverage.as_uint64()
         asset_holdings_amount = leverage_box_value.asset_amount
 
         pool_address = self.get_logicsig_address(user_box_name.asset)
 
         sell_asset = itxn.AssetTransfer(
-            xfer_asset=user_box_name.asset.native,
-            asset_amount=asset_holdings_amount.native,
+            xfer_asset=user_box_name.asset.as_uint64(),
+            asset_amount=asset_holdings_amount.as_uint64(),
             asset_receiver=pool_address
         )
 
@@ -122,12 +128,12 @@ class Levy(ARC4Contract):
             on_completion=OnCompleteAction.NoOp,
             app_args=(arg_1, arg_2, arg_3),
             accounts=(pool_address,),
-            assets=(Asset(user_box_name.asset.native),)
+            assets=(Asset(user_box_name.asset.as_uint64()),)
         )
 
         tx_1, tx_2 = itxn.submit_txns(sell_asset, asset_sell)
 
-        algo_received_if_position_closed = arc4.UInt64.from_bytes(tx_2.logs(5)[-8:]).native
+        algo_received_if_position_closed = arc4.UInt64.from_bytes(tx_2.logs(5)[-8:]).as_uint64()
 
         initial_position = initial_algo_amount * leverage
         debt = initial_position - initial_algo_amount
@@ -143,18 +149,31 @@ class Levy(ARC4Contract):
         
 
     @abimethod
-    def liquidate(self, user_box_name: UserLeverageBoxName) -> None: #return whether to liquidate and the current value
+    def liquidate(self, user_box_name: UserLeverageBoxName) -> None: 
         assert Txn.sender == Global.creator_address
-        leverage_box_value = self.user_leveraged_positions[user_box_name].copy()
-        initial_algo_amount = leverage_box_value.algo_deposit.native
-        leverage = leverage_box_value.leverage.native
-        asset_holdings_amount = leverage_box_value.asset_amount
+        user_box_value = self.user_leveraged_positions[user_box_name].copy()
 
+        algo_received_after_closing_position = self.sell_asset(user_box_name, user_box_value)
+
+        self.dispense_liquidation_outputs(
+            user_box_name,
+            user_box_value,
+            algo_received_after_closing_position
+        )
+
+    @subroutine
+    def sell_asset(
+        self,
+        user_box_name: UserLeverageBoxName, 
+        user_box_value: UserLeverageBoxValue,
+    ) -> UInt64:
+        
         pool_address = self.get_logicsig_address(user_box_name.asset)
+        asset_holdings_amount = user_box_value.asset_amount
 
         sell_asset = itxn.AssetTransfer(
-            xfer_asset=user_box_name.asset.native,
-            asset_amount=asset_holdings_amount.native,
+            xfer_asset=user_box_name.asset.as_uint64(),
+            asset_amount=asset_holdings_amount.as_uint64(),
             asset_receiver=pool_address
         )
 
@@ -167,12 +186,23 @@ class Levy(ARC4Contract):
             on_completion=OnCompleteAction.NoOp,
             app_args=(arg_1, arg_2, arg_3),
             accounts=(pool_address,),
-            assets=(Asset(user_box_name.asset.native),)
+            assets=(Asset(user_box_name.asset.as_uint64()),)
         )
 
-        tx_1, tx_2 = itxn.submit_txns(sell_asset, asset_sell)
+        sell_asset_axfer_result, sell_asset_app_call_result = itxn.submit_txns(sell_asset, asset_sell)
+        return arc4.UInt64.from_bytes(sell_asset_app_call_result.logs(5)[-8:]).as_uint64()
 
-        algo_received_after_closing_position = arc4.UInt64.from_bytes(tx_2.logs(5)[-8:]).native
+    
+    @subroutine
+    def dispense_liquidation_outputs(
+        self,
+        user_box_name: UserLeverageBoxName, 
+        user_box_value: UserLeverageBoxValue,
+        algo_received_after_closing_position: UInt64
+    ) -> None:
+        
+        initial_algo_amount = user_box_value.algo_deposit.as_uint64()
+        leverage = user_box_value.leverage.as_uint64()
 
         initial_position = initial_algo_amount * leverage
         debt = initial_position - initial_algo_amount
@@ -190,5 +220,3 @@ class Levy(ARC4Contract):
                     receiver=user_box_name.user.native,
                     amount=user_remaining_funds - fee
                 ).submit()
-
-        

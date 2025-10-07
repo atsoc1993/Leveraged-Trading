@@ -3,7 +3,7 @@
   "sources": [
     "../contract.py"
   ],
-  "mappings": "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",
+  "mappings": "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",
   "op_pc_offset": 0,
   "pc_events": {
     "1": {
@@ -3614,15 +3614,15 @@
       "op": "box_get",
       "defined_out": [
         "aggregate%box_get%1#0",
-        "leverage_box_value#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
         "user_box_name#0",
-        "leverage_box_value#0",
+        "user_box_value#0",
         "aggregate%box_get%1#0"
       ]
     },
@@ -3634,302 +3634,187 @@
         "user_remaining_funds#0",
         "user_box_name#0",
         "user_box_name#0",
-        "leverage_box_value#0"
+        "user_box_value#0"
       ]
     },
     "673": {
-      "op": "dup",
-      "defined_out": [
-        "leverage_box_value#0",
-        "leverage_box_value#0 (copy)",
-        "user_box_name#0"
-      ],
-      "stack_out": [
-        "fee#0",
-        "user_remaining_funds#0",
-        "user_box_name#0",
-        "user_box_name#0",
-        "leverage_box_value#0",
-        "leverage_box_value#0 (copy)"
-      ]
-    },
-    "674": {
-      "op": "intc_0 // 0",
-      "stack_out": [
-        "fee#0",
-        "user_remaining_funds#0",
-        "user_box_name#0",
-        "user_box_name#0",
-        "leverage_box_value#0",
-        "leverage_box_value#0 (copy)",
-        "0"
-      ]
-    },
-    "675": {
-      "op": "extract_uint64",
-      "defined_out": [
-        "initial_algo_amount#0",
-        "leverage_box_value#0",
-        "user_box_name#0"
-      ],
-      "stack_out": [
-        "fee#0",
-        "user_remaining_funds#0",
-        "user_box_name#0",
-        "user_box_name#0",
-        "leverage_box_value#0",
-        "initial_algo_amount#0"
-      ]
-    },
-    "676": {
       "op": "dig 1",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
         "user_box_name#0",
-        "leverage_box_value#0",
-        "initial_algo_amount#0",
-        "leverage_box_value#0 (copy)"
-      ]
-    },
-    "678": {
-      "op": "pushint 16 // 16",
-      "defined_out": [
-        "16",
-        "initial_algo_amount#0",
-        "leverage_box_value#0",
-        "leverage_box_value#0 (copy)",
-        "user_box_name#0"
-      ],
-      "stack_out": [
-        "fee#0",
-        "user_remaining_funds#0",
-        "user_box_name#0",
-        "user_box_name#0",
-        "leverage_box_value#0",
-        "initial_algo_amount#0",
-        "leverage_box_value#0 (copy)",
-        "16"
-      ]
-    },
-    "680": {
-      "op": "getbyte",
-      "defined_out": [
-        "initial_algo_amount#0",
-        "leverage#0",
-        "leverage_box_value#0",
-        "user_box_name#0"
-      ],
-      "stack_out": [
-        "fee#0",
-        "user_remaining_funds#0",
-        "user_box_name#0",
-        "user_box_name#0",
-        "leverage_box_value#0",
-        "initial_algo_amount#0",
-        "leverage#0"
-      ]
-    },
-    "681": {
-      "op": "dig 3",
-      "stack_out": [
-        "fee#0",
-        "user_remaining_funds#0",
-        "user_box_name#0",
-        "user_box_name#0",
-        "leverage_box_value#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "user_box_name#0 (copy)"
       ]
     },
-    "683": {
+    "675": {
       "op": "extract 32 8",
       "defined_out": [
-        "aggregate%extract%3#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "leverage_box_value#0",
-        "user_box_name#0"
+        "aggregate%extract%0#0",
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
         "user_box_name#0",
-        "leverage_box_value#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "aggregate%extract%3#0"
+        "user_box_value#0",
+        "aggregate%extract%0#0"
       ]
     },
-    "686": {
+    "678": {
       "callsub": "contract.Levy.get_logicsig_address",
       "op": "callsub get_logicsig_address",
       "defined_out": [
-        "initial_algo_amount#0",
-        "leverage#0",
-        "leverage_box_value#0",
         "pool_address#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
         "user_box_name#0",
-        "leverage_box_value#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0"
       ]
     },
-    "689": {
-      "op": "uncover 4",
+    "681": {
+      "op": "uncover 2",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "leverage_box_value#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "user_box_name#0"
       ]
     },
-    "691": {
+    "683": {
       "op": "pushint 32 // 32",
       "defined_out": [
         "32",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "leverage_box_value#0",
         "pool_address#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "leverage_box_value#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "user_box_name#0",
         "32"
       ]
     },
-    "693": {
+    "685": {
       "op": "extract_uint64",
       "defined_out": [
-        "initial_algo_amount#0",
-        "leverage#0",
-        "leverage_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "leverage_box_value#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0"
       ]
     },
-    "694": {
-      "op": "uncover 4",
+    "686": {
+      "op": "dig 2",
+      "defined_out": [
+        "pool_address#0",
+        "sell_asset%%param_XferAsset_idx_0#0",
+        "user_box_name#0",
+        "user_box_value#0",
+        "user_box_value#0 (copy)"
+      ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
-        "leverage_box_value#0"
+        "user_box_value#0 (copy)"
       ]
     },
-    "696": {
+    "688": {
       "op": "intc_2 // 8",
       "defined_out": [
         "8",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "leverage_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0",
+        "user_box_value#0 (copy)"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
-        "leverage_box_value#0",
+        "user_box_value#0 (copy)",
         "8"
       ]
     },
-    "697": {
+    "689": {
       "op": "extract_uint64",
       "defined_out": [
-        "initial_algo_amount#0",
-        "leverage#0",
         "pool_address#0",
         "sell_asset%%param_AssetAmount_idx_0#0",
         "sell_asset%%param_XferAsset_idx_0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "sell_asset%%param_AssetAmount_idx_0#0"
       ]
     },
-    "698": {
+    "690": {
       "op": "intc_0 // 0",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "sell_asset%%param_AssetAmount_idx_0#0",
         "0"
       ]
     },
-    "699": {
+    "691": {
       "op": "bytec_0 // \"tinyman_router\"",
       "defined_out": [
         "\"tinyman_router\"",
         "0",
-        "initial_algo_amount#0",
-        "leverage#0",
         "pool_address#0",
         "sell_asset%%param_AssetAmount_idx_0#0",
         "sell_asset%%param_XferAsset_idx_0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "sell_asset%%param_AssetAmount_idx_0#0",
@@ -3937,24 +3822,22 @@
         "\"tinyman_router\""
       ]
     },
-    "700": {
+    "692": {
       "op": "app_global_get_ex",
       "defined_out": [
-        "initial_algo_amount#0",
-        "leverage#0",
         "maybe_exists%0#0",
         "maybe_value%0#0",
         "pool_address#0",
         "sell_asset%%param_AssetAmount_idx_0#0",
         "sell_asset%%param_XferAsset_idx_0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "sell_asset%%param_AssetAmount_idx_0#0",
@@ -3962,42 +3845,39 @@
         "maybe_exists%0#0"
       ]
     },
-    "701": {
+    "693": {
       "error": "check self.tinyman_router exists",
       "op": "assert // check self.tinyman_router exists",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "sell_asset%%param_AssetAmount_idx_0#0",
         "maybe_value%0#0"
       ]
     },
-    "702": {
+    "694": {
       "op": "itxn_begin"
     },
-    "703": {
+    "695": {
       "op": "dig 3",
       "defined_out": [
-        "initial_algo_amount#0",
-        "leverage#0",
         "maybe_value%0#0",
         "pool_address#0",
         "pool_address#0 (copy)",
         "sell_asset%%param_AssetAmount_idx_0#0",
         "sell_asset%%param_XferAsset_idx_0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "sell_asset%%param_AssetAmount_idx_0#0",
@@ -4005,715 +3885,734 @@
         "pool_address#0 (copy)"
       ]
     },
-    "705": {
+    "697": {
       "op": "itxn_field AssetReceiver",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "sell_asset%%param_AssetAmount_idx_0#0",
         "maybe_value%0#0"
       ]
     },
-    "707": {
+    "699": {
       "op": "swap",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "maybe_value%0#0",
         "sell_asset%%param_AssetAmount_idx_0#0"
       ]
     },
-    "708": {
+    "700": {
       "op": "itxn_field AssetAmount",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "maybe_value%0#0"
       ]
     },
-    "710": {
+    "702": {
       "op": "dig 1",
       "defined_out": [
-        "initial_algo_amount#0",
-        "leverage#0",
         "maybe_value%0#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "sell_asset%%param_XferAsset_idx_0#0 (copy)",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "maybe_value%0#0",
         "sell_asset%%param_XferAsset_idx_0#0 (copy)"
       ]
     },
-    "712": {
+    "704": {
       "op": "itxn_field XferAsset",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "maybe_value%0#0"
       ]
     },
-    "714": {
+    "706": {
       "op": "intc_3 // axfer",
       "defined_out": [
         "axfer",
-        "initial_algo_amount#0",
-        "leverage#0",
         "maybe_value%0#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "maybe_value%0#0",
         "axfer"
       ]
     },
-    "715": {
+    "707": {
       "op": "itxn_field TypeEnum",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "maybe_value%0#0"
       ]
     },
-    "717": {
+    "709": {
       "op": "intc_0 // 0",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "maybe_value%0#0",
         "0"
       ]
     },
-    "718": {
+    "710": {
       "op": "itxn_field Fee",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "sell_asset%%param_XferAsset_idx_0#0",
         "maybe_value%0#0"
       ]
     },
-    "720": {
+    "712": {
       "op": "itxn_next"
     },
-    "721": {
+    "713": {
       "op": "swap",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "maybe_value%0#0",
         "sell_asset%%param_XferAsset_idx_0#0"
       ]
     },
-    "722": {
+    "714": {
       "op": "itxn_field Assets",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "pool_address#0",
         "maybe_value%0#0"
       ]
     },
-    "724": {
+    "716": {
       "op": "swap",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "maybe_value%0#0",
         "pool_address#0"
       ]
     },
-    "725": {
+    "717": {
       "op": "itxn_field Accounts",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "maybe_value%0#0"
       ]
     },
-    "727": {
+    "719": {
       "op": "bytec_2 // 0x73776170",
       "defined_out": [
         "0x73776170",
-        "initial_algo_amount#0",
-        "leverage#0",
         "maybe_value%0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "maybe_value%0#0",
         "0x73776170"
       ]
     },
-    "728": {
+    "720": {
       "op": "itxn_field ApplicationArgs",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "maybe_value%0#0"
       ]
     },
-    "730": {
+    "722": {
       "op": "bytec_3 // 0x66697865642d696e707574",
       "defined_out": [
         "0x66697865642d696e707574",
-        "initial_algo_amount#0",
-        "leverage#0",
         "maybe_value%0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "maybe_value%0#0",
         "0x66697865642d696e707574"
       ]
     },
-    "731": {
+    "723": {
       "op": "itxn_field ApplicationArgs",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "maybe_value%0#0"
       ]
     },
-    "733": {
+    "725": {
       "op": "bytec_1 // 0x0000000000000000",
       "defined_out": [
         "0x0000000000000000",
-        "initial_algo_amount#0",
-        "leverage#0",
         "maybe_value%0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "maybe_value%0#0",
         "0x0000000000000000"
       ]
     },
-    "734": {
+    "726": {
       "op": "itxn_field ApplicationArgs",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "maybe_value%0#0"
       ]
     },
-    "736": {
+    "728": {
       "op": "intc_0 // NoOp",
       "defined_out": [
         "NoOp",
-        "initial_algo_amount#0",
-        "leverage#0",
         "maybe_value%0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "maybe_value%0#0",
         "NoOp"
       ]
     },
-    "737": {
+    "729": {
       "op": "itxn_field OnCompletion",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "maybe_value%0#0"
       ]
     },
-    "739": {
+    "731": {
       "op": "itxn_field ApplicationID",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0"
+        "user_box_value#0"
       ]
     },
-    "741": {
+    "733": {
       "op": "pushint 6 // appl",
       "defined_out": [
         "appl",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "appl"
       ]
     },
-    "743": {
+    "735": {
       "op": "itxn_field TypeEnum",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0"
+        "user_box_value#0"
       ]
     },
-    "745": {
+    "737": {
       "op": "intc_0 // 0",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "0"
       ]
     },
-    "746": {
+    "738": {
       "op": "itxn_field Fee",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0"
+        "user_box_value#0"
       ]
     },
-    "748": {
+    "740": {
       "op": "itxn_submit"
     },
-    "749": {
+    "741": {
       "op": "itxna Logs 5",
       "defined_out": [
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
-        "user_box_name#0"
+        "tmp%2#1",
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0"
+        "user_box_value#0",
+        "tmp%2#1"
       ]
     },
-    "752": {
+    "744": {
       "op": "dup",
       "defined_out": [
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
-        "tmp%7#0 (copy)",
-        "user_box_name#0"
+        "tmp%2#1",
+        "tmp%2#1 (copy)",
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
-        "tmp%7#0 (copy)"
+        "user_box_value#0",
+        "tmp%2#1",
+        "tmp%2#1 (copy)"
       ]
     },
-    "753": {
+    "745": {
       "op": "len",
       "defined_out": [
-        "initial_algo_amount#0",
         "length%0#0",
-        "leverage#0",
-        "tmp%7#0",
-        "user_box_name#0"
+        "tmp%2#1",
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0"
       ]
     },
-    "754": {
+    "746": {
       "op": "intc_2 // 8",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0",
         "8"
       ]
     },
-    "755": {
+    "747": {
       "op": "dig 1",
       "defined_out": [
         "8",
-        "initial_algo_amount#0",
         "length%0#0",
         "length%0#0 (copy)",
-        "leverage#0",
-        "tmp%7#0",
-        "user_box_name#0"
+        "tmp%2#1",
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0",
         "8",
         "length%0#0 (copy)"
       ]
     },
-    "757": {
+    "749": {
       "op": ">=",
       "defined_out": [
-        "initial_algo_amount#0",
         "is_out_of_bounds%0#0",
         "length%0#0",
-        "leverage#0",
-        "tmp%7#0",
-        "user_box_name#0"
+        "tmp%2#1",
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0",
         "is_out_of_bounds%0#0"
       ]
     },
-    "758": {
+    "750": {
       "op": "intc_2 // 8",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0",
         "is_out_of_bounds%0#0",
         "8"
       ]
     },
-    "759": {
+    "751": {
       "op": "dig 2",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0",
         "is_out_of_bounds%0#0",
         "8",
         "length%0#0 (copy)"
       ]
     },
-    "761": {
+    "753": {
       "op": "uncover 2",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0",
         "8",
         "length%0#0 (copy)",
         "is_out_of_bounds%0#0"
       ]
     },
-    "763": {
+    "755": {
       "op": "select",
       "defined_out": [
         "bounded_offset%0#0",
-        "initial_algo_amount#0",
         "length%0#0",
-        "leverage#0",
-        "tmp%7#0",
-        "user_box_name#0"
+        "tmp%2#1",
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0",
         "bounded_offset%0#0"
       ]
     },
-    "764": {
+    "756": {
       "op": "dig 1",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0",
         "bounded_offset%0#0",
         "length%0#0 (copy)"
       ]
     },
-    "766": {
+    "758": {
       "op": "swap",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0",
         "length%0#0 (copy)",
         "bounded_offset%0#0"
       ]
     },
-    "767": {
+    "759": {
       "op": "-",
       "defined_out": [
         "bounded_index%0#0",
-        "initial_algo_amount#0",
         "length%0#0",
-        "leverage#0",
-        "tmp%7#0",
-        "user_box_name#0"
+        "tmp%2#1",
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "length%0#0",
         "bounded_index%0#0"
       ]
     },
-    "768": {
+    "760": {
       "op": "swap",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "tmp%7#0",
+        "user_box_value#0",
+        "tmp%2#1",
         "bounded_index%0#0",
         "length%0#0"
       ]
     },
-    "769": {
+    "761": {
       "op": "substring3",
       "defined_out": [
-        "initial_algo_amount#0",
-        "leverage#0",
         "reinterpret_Encoded(uint64)%0#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "reinterpret_Encoded(uint64)%0#0"
       ]
     },
-    "770": {
+    "762": {
       "op": "btoi",
       "defined_out": [
         "algo_received_after_closing_position#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "algo_received_after_closing_position#0"
       ]
     },
-    "771": {
+    "763": {
       "op": "dup",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "algo_received_after_closing_position#0",
         "algo_received_after_closing_position#0"
       ]
     },
-    "772": {
-      "op": "cover 3",
+    "764": {
+      "op": "cover 2",
       "defined_out": [
         "algo_received_after_closing_position#0",
-        "initial_algo_amount#0",
-        "leverage#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
         "algo_received_after_closing_position#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "algo_received_after_closing_position#0"
       ]
     },
-    "774": {
-      "op": "dig 2",
+    "766": {
+      "op": "dig 1",
+      "stack_out": [
+        "fee#0",
+        "user_remaining_funds#0",
+        "user_box_name#0",
+        "algo_received_after_closing_position#0",
+        "user_box_value#0",
+        "algo_received_after_closing_position#0",
+        "user_box_value#0 (copy)"
+      ]
+    },
+    "768": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "fee#0",
+        "user_remaining_funds#0",
+        "user_box_name#0",
+        "algo_received_after_closing_position#0",
+        "user_box_value#0",
+        "algo_received_after_closing_position#0",
+        "user_box_value#0 (copy)",
+        "0"
+      ]
+    },
+    "769": {
+      "op": "extract_uint64",
       "defined_out": [
         "algo_received_after_closing_position#0",
         "initial_algo_amount#0",
-        "initial_algo_amount#0 (copy)",
-        "leverage#0",
-        "user_box_name#0"
+        "user_box_name#0",
+        "user_box_value#0"
       ],
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
         "algo_received_after_closing_position#0",
-        "initial_algo_amount#0",
-        "leverage#0",
+        "user_box_value#0",
         "algo_received_after_closing_position#0",
-        "initial_algo_amount#0 (copy)"
+        "initial_algo_amount#0"
       ]
     },
-    "776": {
+    "770": {
       "op": "uncover 2",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
         "algo_received_after_closing_position#0",
-        "initial_algo_amount#0",
         "algo_received_after_closing_position#0",
-        "initial_algo_amount#0 (copy)",
+        "initial_algo_amount#0",
+        "user_box_value#0"
+      ]
+    },
+    "772": {
+      "op": "pushint 16 // 16",
+      "defined_out": [
+        "16",
+        "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
+        "user_box_name#0",
+        "user_box_value#0"
+      ],
+      "stack_out": [
+        "fee#0",
+        "user_remaining_funds#0",
+        "user_box_name#0",
+        "algo_received_after_closing_position#0",
+        "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
+        "user_box_value#0",
+        "16"
+      ]
+    },
+    "774": {
+      "op": "getbyte",
+      "defined_out": [
+        "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
+        "leverage#0",
+        "user_box_name#0"
+      ],
+      "stack_out": [
+        "fee#0",
+        "user_remaining_funds#0",
+        "user_box_name#0",
+        "algo_received_after_closing_position#0",
+        "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
         "leverage#0"
       ]
     },
-    "778": {
+    "775": {
+      "op": "dig 1",
+      "defined_out": [
+        "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
+        "initial_algo_amount#0 (copy)",
+        "leverage#0",
+        "user_box_name#0"
+      ],
+      "stack_out": [
+        "fee#0",
+        "user_remaining_funds#0",
+        "user_box_name#0",
+        "algo_received_after_closing_position#0",
+        "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
+        "leverage#0",
+        "initial_algo_amount#0 (copy)"
+      ]
+    },
+    "777": {
       "op": "*",
       "defined_out": [
         "algo_received_after_closing_position#0",
@@ -4726,25 +4625,25 @@
         "user_remaining_funds#0",
         "user_box_name#0",
         "algo_received_after_closing_position#0",
-        "initial_algo_amount#0",
         "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
         "initial_position#0"
       ]
     },
-    "779": {
+    "778": {
       "op": "dup",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
         "algo_received_after_closing_position#0",
-        "initial_algo_amount#0",
         "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
         "initial_position#0",
         "initial_position#0"
       ]
     },
-    "780": {
+    "779": {
       "op": "cover 3",
       "stack_out": [
         "fee#0",
@@ -4752,26 +4651,26 @@
         "user_box_name#0",
         "algo_received_after_closing_position#0",
         "initial_position#0",
-        "initial_algo_amount#0",
         "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
         "initial_position#0"
       ]
     },
-    "782": {
-      "op": "dig 2",
+    "781": {
+      "op": "dig 1",
       "stack_out": [
         "fee#0",
         "user_remaining_funds#0",
         "user_box_name#0",
         "algo_received_after_closing_position#0",
         "initial_position#0",
-        "initial_algo_amount#0",
         "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
         "initial_position#0",
         "initial_algo_amount#0 (copy)"
       ]
     },
-    "784": {
+    "783": {
       "op": "-",
       "defined_out": [
         "algo_received_after_closing_position#0",
@@ -4786,12 +4685,12 @@
         "user_box_name#0",
         "algo_received_after_closing_position#0",
         "initial_position#0",
-        "initial_algo_amount#0",
         "algo_received_after_closing_position#0",
+        "initial_algo_amount#0",
         "debt#0"
       ]
     },
-    "785": {
+    "784": {
       "op": "cover 2",
       "stack_out": [
         "fee#0",
@@ -4800,17 +4699,17 @@
         "algo_received_after_closing_position#0",
         "initial_position#0",
         "debt#0",
-        "initial_algo_amount#0",
-        "algo_received_after_closing_position#0"
+        "algo_received_after_closing_position#0",
+        "initial_algo_amount#0"
       ]
     },
-    "787": {
-      "op": ">",
+    "786": {
+      "op": "<",
       "defined_out": [
         "algo_received_after_closing_position#0",
         "debt#0",
         "initial_position#0",
-        "tmp%11#0",
+        "tmp%4#0",
         "user_box_name#0"
       ],
       "stack_out": [
@@ -4820,10 +4719,10 @@
         "algo_received_after_closing_position#0",
         "initial_position#0",
         "debt#0",
-        "tmp%11#0"
+        "tmp%4#0"
       ]
     },
-    "788": {
+    "787": {
       "op": "bz liquidate_else_body@5",
       "stack_out": [
         "fee#0",
@@ -4834,7 +4733,7 @@
         "debt#0"
       ]
     },
-    "791": {
+    "790": {
       "op": "dig 3",
       "stack_out": [
         "fee#0",
@@ -4846,7 +4745,7 @@
         "user_box_name#0"
       ]
     },
-    "793": {
+    "792": {
       "op": "box_del",
       "defined_out": [
         "algo_received_after_closing_position#0",
@@ -4865,7 +4764,7 @@
         "{box_del}"
       ]
     },
-    "794": {
+    "793": {
       "op": "pop",
       "stack_out": [
         "fee#0",
@@ -4876,8 +4775,8 @@
         "debt#0"
       ]
     },
-    "795": {
-      "block": "liquidate_after_if_else@10",
+    "794": {
+      "block": "liquidate_after_if_else@8",
       "stack_in": [
         "fee#0",
         "user_remaining_funds#0",
@@ -4900,7 +4799,7 @@
         "1"
       ]
     },
-    "796": {
+    "795": {
       "op": "return",
       "stack_out": [
         "fee#0",
@@ -4911,7 +4810,7 @@
         "debt#0"
       ]
     },
-    "797": {
+    "796": {
       "block": "liquidate_else_body@5",
       "stack_in": [
         "fee#0",
@@ -4935,7 +4834,7 @@
         "algo_received_after_closing_position#0"
       ]
     },
-    "799": {
+    "798": {
       "op": "dig 1",
       "defined_out": [
         "algo_received_after_closing_position#0",
@@ -4952,7 +4851,7 @@
         "debt#0"
       ]
     },
-    "801": {
+    "800": {
       "op": "-",
       "defined_out": [
         "algo_received_after_closing_position#0",
@@ -4969,7 +4868,7 @@
         "user_remaining_funds#0"
       ]
     },
-    "802": {
+    "801": {
       "op": "dup",
       "stack_out": [
         "fee#0",
@@ -4982,7 +4881,7 @@
         "user_remaining_funds#0"
       ]
     },
-    "803": {
+    "802": {
       "op": "bury 6",
       "defined_out": [
         "algo_received_after_closing_position#0",
@@ -4999,7 +4898,7 @@
         "user_remaining_funds#0"
       ]
     },
-    "805": {
+    "804": {
       "op": "intc_0 // 0",
       "stack_out": [
         "fee#0",
@@ -5012,7 +4911,7 @@
         "0"
       ]
     },
-    "806": {
+    "805": {
       "op": "bytec 7 // \"fee\"",
       "defined_out": [
         "\"fee\"",
@@ -5033,13 +4932,13 @@
         "\"fee\""
       ]
     },
-    "808": {
+    "807": {
       "op": "app_global_get_ex",
       "defined_out": [
         "algo_received_after_closing_position#0",
         "debt#0",
-        "maybe_exists%1#0",
-        "maybe_value%1#0",
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
         "user_remaining_funds#0"
       ],
       "stack_out": [
@@ -5050,11 +4949,11 @@
         "initial_position#0",
         "debt#0",
         "user_remaining_funds#0",
-        "maybe_value%1#0",
-        "maybe_exists%1#0"
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
       ]
     },
-    "809": {
+    "808": {
       "error": "check self.fee exists",
       "op": "assert // check self.fee exists",
       "stack_out": [
@@ -5065,16 +4964,16 @@
         "initial_position#0",
         "debt#0",
         "user_remaining_funds#0",
-        "maybe_value%1#0"
+        "maybe_value%0#0"
       ]
     },
-    "810": {
+    "809": {
       "op": "dig 3",
       "defined_out": [
         "algo_received_after_closing_position#0",
         "debt#0",
         "initial_position#0",
-        "maybe_value%1#0",
+        "maybe_value%0#0",
         "user_remaining_funds#0"
       ],
       "stack_out": [
@@ -5085,17 +4984,17 @@
         "initial_position#0",
         "debt#0",
         "user_remaining_funds#0",
-        "maybe_value%1#0",
+        "maybe_value%0#0",
         "initial_position#0"
       ]
     },
-    "812": {
+    "811": {
       "op": "*",
       "defined_out": [
         "algo_received_after_closing_position#0",
         "debt#0",
         "initial_position#0",
-        "tmp%13#0",
+        "tmp%6#0",
         "user_remaining_funds#0"
       ],
       "stack_out": [
@@ -5106,17 +5005,17 @@
         "initial_position#0",
         "debt#0",
         "user_remaining_funds#0",
-        "tmp%13#0"
+        "tmp%6#0"
       ]
     },
-    "813": {
+    "812": {
       "op": "pushint 10000 // 10000",
       "defined_out": [
         "10000",
         "algo_received_after_closing_position#0",
         "debt#0",
         "initial_position#0",
-        "tmp%13#0",
+        "tmp%6#0",
         "user_remaining_funds#0"
       ],
       "stack_out": [
@@ -5127,11 +5026,11 @@
         "initial_position#0",
         "debt#0",
         "user_remaining_funds#0",
-        "tmp%13#0",
+        "tmp%6#0",
         "10000"
       ]
     },
-    "816": {
+    "815": {
       "op": "/",
       "defined_out": [
         "algo_received_after_closing_position#0",
@@ -5151,7 +5050,7 @@
         "fee#0"
       ]
     },
-    "817": {
+    "816": {
       "op": "dup",
       "stack_out": [
         "fee#0",
@@ -5165,7 +5064,7 @@
         "fee#0"
       ]
     },
-    "818": {
+    "817": {
       "op": "bury 8",
       "stack_out": [
         "fee#0",
@@ -5178,14 +5077,14 @@
         "fee#0"
       ]
     },
-    "820": {
+    "819": {
       "op": "<",
       "defined_out": [
         "algo_received_after_closing_position#0",
         "debt#0",
         "fee#0",
         "initial_position#0",
-        "tmp%15#0",
+        "tmp%8#0",
         "user_remaining_funds#0"
       ],
       "stack_out": [
@@ -5195,10 +5094,10 @@
         "algo_received_after_closing_position#0",
         "initial_position#0",
         "debt#0",
-        "tmp%15#0"
+        "tmp%8#0"
       ]
     },
-    "821": {
+    "820": {
       "op": "bz liquidate_else_body@7",
       "stack_out": [
         "fee#0",
@@ -5209,7 +5108,7 @@
         "debt#0"
       ]
     },
-    "824": {
+    "823": {
       "op": "dig 3",
       "defined_out": [
         "algo_received_after_closing_position#0",
@@ -5229,7 +5128,7 @@
         "user_box_name#0"
       ]
     },
-    "826": {
+    "825": {
       "op": "box_del",
       "defined_out": [
         "algo_received_after_closing_position#0",
@@ -5250,7 +5149,7 @@
         "{box_del}"
       ]
     },
-    "827": {
+    "826": {
       "op": "pop",
       "stack_out": [
         "fee#0",
@@ -5261,10 +5160,10 @@
         "debt#0"
       ]
     },
-    "828": {
-      "op": "b liquidate_after_if_else@10"
+    "827": {
+      "op": "b liquidate_after_if_else@8"
     },
-    "831": {
+    "830": {
       "block": "liquidate_else_body@7",
       "stack_in": [
         "fee#0",
@@ -5276,7 +5175,7 @@
       ],
       "op": "itxn_begin"
     },
-    "832": {
+    "831": {
       "op": "dig 3",
       "defined_out": [
         "user_box_name#0"
@@ -5291,7 +5190,7 @@
         "user_box_name#0"
       ]
     },
-    "834": {
+    "833": {
       "op": "extract 0 32",
       "defined_out": [
         "aggregate%extract%4#0",
@@ -5307,7 +5206,7 @@
         "aggregate%extract%4#0"
       ]
     },
-    "837": {
+    "836": {
       "op": "dig 5",
       "defined_out": [
         "aggregate%extract%4#0",
@@ -5325,7 +5224,7 @@
         "user_remaining_funds#0"
       ]
     },
-    "839": {
+    "838": {
       "op": "dig 7",
       "defined_out": [
         "aggregate%extract%4#0",
@@ -5345,7 +5244,7 @@
         "fee#0"
       ]
     },
-    "841": {
+    "840": {
       "op": "-",
       "defined_out": [
         "aggregate%extract%4#0",
@@ -5365,7 +5264,7 @@
         "inner_txn_params%0%%param_Amount_idx_0#0"
       ]
     },
-    "842": {
+    "841": {
       "op": "itxn_field Amount",
       "stack_out": [
         "fee#0",
@@ -5377,7 +5276,7 @@
         "aggregate%extract%4#0"
       ]
     },
-    "844": {
+    "843": {
       "op": "itxn_field Receiver",
       "stack_out": [
         "fee#0",
@@ -5388,7 +5287,7 @@
         "debt#0"
       ]
     },
-    "846": {
+    "845": {
       "op": "intc_1 // pay",
       "defined_out": [
         "fee#0",
@@ -5406,7 +5305,7 @@
         "pay"
       ]
     },
-    "847": {
+    "846": {
       "op": "itxn_field TypeEnum",
       "stack_out": [
         "fee#0",
@@ -5417,7 +5316,7 @@
         "debt#0"
       ]
     },
-    "849": {
+    "848": {
       "op": "intc_0 // 0",
       "defined_out": [
         "0",
@@ -5435,7 +5334,7 @@
         "0"
       ]
     },
-    "850": {
+    "849": {
       "op": "itxn_field Fee",
       "stack_out": [
         "fee#0",
@@ -5446,13 +5345,13 @@
         "debt#0"
       ]
     },
-    "852": {
+    "851": {
       "op": "itxn_submit"
     },
-    "853": {
-      "op": "b liquidate_after_if_else@10"
+    "852": {
+      "op": "b liquidate_after_if_else@8"
     },
-    "856": {
+    "855": {
       "subroutine": "contract.Levy.get_logicsig_address",
       "params": {
         "asset#0": "bytes"
@@ -5461,7 +5360,7 @@
       "stack_in": [],
       "op": "proto 1 1"
     },
-    "859": {
+    "858": {
       "op": "intc_0 // 0",
       "defined_out": [
         "0"
@@ -5470,7 +5369,7 @@
         "0"
       ]
     },
-    "860": {
+    "859": {
       "op": "bytec 4 // \"pool_logicsig_template\"",
       "defined_out": [
         "\"pool_logicsig_template\"",
@@ -5481,7 +5380,7 @@
         "\"pool_logicsig_template\""
       ]
     },
-    "862": {
+    "861": {
       "op": "app_global_get_ex",
       "defined_out": [
         "maybe_exists%0#0",
@@ -5492,14 +5391,14 @@
         "maybe_exists%0#0"
       ]
     },
-    "863": {
+    "862": {
       "error": "check self.pool_logicsig_template exists",
       "op": "assert // check self.pool_logicsig_template exists",
       "stack_out": [
         "program_bytes#0"
       ]
     },
-    "864": {
+    "863": {
       "op": "dup",
       "defined_out": [
         "program_bytes#0",
@@ -5510,7 +5409,7 @@
         "program_bytes#0 (copy)"
       ]
     },
-    "865": {
+    "864": {
       "op": "len",
       "defined_out": [
         "length%0#0",
@@ -5521,7 +5420,7 @@
         "length%0#0"
       ]
     },
-    "866": {
+    "865": {
       "op": "intc_0 // 0",
       "stack_out": [
         "program_bytes#0",
@@ -5529,7 +5428,7 @@
         "0"
       ]
     },
-    "867": {
+    "866": {
       "op": "dig 1",
       "defined_out": [
         "0",
@@ -5544,7 +5443,7 @@
         "length%0#0 (copy)"
       ]
     },
-    "869": {
+    "868": {
       "op": ">=",
       "defined_out": [
         "is_out_of_bounds%0#0",
@@ -5557,7 +5456,7 @@
         "is_out_of_bounds%0#0"
       ]
     },
-    "870": {
+    "869": {
       "op": "intc_0 // 0",
       "stack_out": [
         "program_bytes#0",
@@ -5566,7 +5465,7 @@
         "0"
       ]
     },
-    "871": {
+    "870": {
       "op": "dig 2",
       "stack_out": [
         "program_bytes#0",
@@ -5576,7 +5475,7 @@
         "length%0#0 (copy)"
       ]
     },
-    "873": {
+    "872": {
       "op": "uncover 2",
       "stack_out": [
         "program_bytes#0",
@@ -5586,7 +5485,7 @@
         "is_out_of_bounds%0#0"
       ]
     },
-    "875": {
+    "874": {
       "op": "select",
       "defined_out": [
         "bounded_index%0#0",
@@ -5599,7 +5498,7 @@
         "bounded_index%0#0"
       ]
     },
-    "876": {
+    "875": {
       "op": "pushint 3 // 3",
       "defined_out": [
         "3",
@@ -5614,7 +5513,7 @@
         "3"
       ]
     },
-    "878": {
+    "877": {
       "op": "dig 2",
       "stack_out": [
         "program_bytes#0",
@@ -5624,7 +5523,7 @@
         "length%0#0 (copy)"
       ]
     },
-    "880": {
+    "879": {
       "op": ">=",
       "defined_out": [
         "bounded_index%0#0",
@@ -5639,7 +5538,7 @@
         "is_out_of_bounds%1#0"
       ]
     },
-    "881": {
+    "880": {
       "op": "pushint 3 // 3",
       "stack_out": [
         "program_bytes#0",
@@ -5649,7 +5548,7 @@
         "3"
       ]
     },
-    "883": {
+    "882": {
       "op": "dig 3",
       "stack_out": [
         "program_bytes#0",
@@ -5660,7 +5559,7 @@
         "length%0#0 (copy)"
       ]
     },
-    "885": {
+    "884": {
       "op": "uncover 2",
       "stack_out": [
         "program_bytes#0",
@@ -5671,7 +5570,7 @@
         "is_out_of_bounds%1#0"
       ]
     },
-    "887": {
+    "886": {
       "op": "select",
       "defined_out": [
         "bounded_index%0#0",
@@ -5686,7 +5585,7 @@
         "bounded_index%1#0"
       ]
     },
-    "888": {
+    "887": {
       "op": "dig 3",
       "stack_out": [
         "program_bytes#0",
@@ -5696,7 +5595,7 @@
         "program_bytes#0 (copy)"
       ]
     },
-    "890": {
+    "889": {
       "op": "cover 2",
       "stack_out": [
         "program_bytes#0",
@@ -5706,7 +5605,7 @@
         "bounded_index%1#0"
       ]
     },
-    "892": {
+    "891": {
       "op": "substring3",
       "defined_out": [
         "length%0#0",
@@ -5719,7 +5618,7 @@
         "tmp%0#0"
       ]
     },
-    "893": {
+    "892": {
       "op": "intc_0 // 0",
       "stack_out": [
         "program_bytes#0",
@@ -5728,7 +5627,7 @@
         "0"
       ]
     },
-    "894": {
+    "893": {
       "op": "bytec_0 // \"tinyman_router\"",
       "defined_out": [
         "\"tinyman_router\"",
@@ -5745,7 +5644,7 @@
         "\"tinyman_router\""
       ]
     },
-    "895": {
+    "894": {
       "op": "app_global_get_ex",
       "defined_out": [
         "length%0#0",
@@ -5762,7 +5661,7 @@
         "maybe_exists%1#0"
       ]
     },
-    "896": {
+    "895": {
       "error": "check self.tinyman_router exists",
       "op": "assert // check self.tinyman_router exists",
       "stack_out": [
@@ -5772,7 +5671,7 @@
         "maybe_value%1#0"
       ]
     },
-    "897": {
+    "896": {
       "op": "itob",
       "defined_out": [
         "aggregate%val_as_bytes%0#0",
@@ -5787,7 +5686,7 @@
         "aggregate%val_as_bytes%0#0"
       ]
     },
-    "898": {
+    "897": {
       "op": "concat",
       "defined_out": [
         "length%0#0",
@@ -5800,7 +5699,7 @@
         "tmp%2#0"
       ]
     },
-    "899": {
+    "898": {
       "op": "frame_dig -1",
       "defined_out": [
         "asset#0 (copy)",
@@ -5815,7 +5714,7 @@
         "asset#0 (copy)"
       ]
     },
-    "901": {
+    "900": {
       "op": "concat",
       "defined_out": [
         "length%0#0",
@@ -5828,7 +5727,7 @@
         "tmp%3#0"
       ]
     },
-    "902": {
+    "901": {
       "op": "bytec_1 // 0x0000000000000000",
       "defined_out": [
         "0x0000000000000000",
@@ -5843,7 +5742,7 @@
         "0x0000000000000000"
       ]
     },
-    "903": {
+    "902": {
       "op": "concat",
       "defined_out": [
         "length%0#0",
@@ -5856,7 +5755,7 @@
         "tmp%4#0"
       ]
     },
-    "904": {
+    "903": {
       "op": "pushint 27 // 27",
       "defined_out": [
         "27",
@@ -5871,7 +5770,7 @@
         "27"
       ]
     },
-    "906": {
+    "905": {
       "op": "dig 2",
       "stack_out": [
         "program_bytes#0",
@@ -5881,7 +5780,7 @@
         "length%0#0 (copy)"
       ]
     },
-    "908": {
+    "907": {
       "op": ">=",
       "defined_out": [
         "is_out_of_bounds%2#0",
@@ -5896,7 +5795,7 @@
         "is_out_of_bounds%2#0"
       ]
     },
-    "909": {
+    "908": {
       "op": "pushint 27 // 27",
       "stack_out": [
         "program_bytes#0",
@@ -5906,7 +5805,7 @@
         "27"
       ]
     },
-    "911": {
+    "910": {
       "op": "dig 3",
       "stack_out": [
         "program_bytes#0",
@@ -5917,7 +5816,7 @@
         "length%0#0 (copy)"
       ]
     },
-    "913": {
+    "912": {
       "op": "uncover 2",
       "stack_out": [
         "program_bytes#0",
@@ -5928,7 +5827,7 @@
         "is_out_of_bounds%2#0"
       ]
     },
-    "915": {
+    "914": {
       "op": "select",
       "defined_out": [
         "bounded_index%2#0",
@@ -5943,7 +5842,7 @@
         "bounded_index%2#0"
       ]
     },
-    "916": {
+    "915": {
       "op": "uncover 3",
       "stack_out": [
         "length%0#0",
@@ -5952,7 +5851,7 @@
         "program_bytes#0"
       ]
     },
-    "918": {
+    "917": {
       "op": "swap",
       "stack_out": [
         "length%0#0",
@@ -5961,7 +5860,7 @@
         "bounded_index%2#0"
       ]
     },
-    "919": {
+    "918": {
       "op": "uncover 3",
       "stack_out": [
         "tmp%4#0",
@@ -5970,7 +5869,7 @@
         "length%0#0"
       ]
     },
-    "921": {
+    "920": {
       "op": "substring3",
       "defined_out": [
         "tmp%4#0",
@@ -5981,13 +5880,13 @@
         "tmp%5#0"
       ]
     },
-    "922": {
+    "921": {
       "op": "concat",
       "stack_out": [
         "program_bytes#0"
       ]
     },
-    "923": {
+    "922": {
       "op": "pushbytes 0x50726f6772616d",
       "defined_out": [
         "0x50726f6772616d",
@@ -5998,14 +5897,14 @@
         "0x50726f6772616d"
       ]
     },
-    "932": {
+    "931": {
       "op": "swap",
       "stack_out": [
         "0x50726f6772616d",
         "program_bytes#0"
       ]
     },
-    "933": {
+    "932": {
       "op": "concat",
       "defined_out": [
         "tmp%7#0"
@@ -6014,7 +5913,7 @@
         "tmp%7#0"
       ]
     },
-    "934": {
+    "933": {
       "op": "sha512_256",
       "defined_out": [
         "reinterpret_account%0#0"
@@ -6023,7 +5922,7 @@
         "reinterpret_account%0#0"
       ]
     },
-    "935": {
+    "934": {
       "retsub": true,
       "op": "retsub"
     }
