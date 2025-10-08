@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getUserPositions, type LeveragedPosition } from "../helpers"
+import { getUserPositions, getUserSpendableBalance, type LeveragedPosition } from "../helpers"
 import { useWallet } from "@txnlab/use-wallet-react";
 import { TransactionSigner } from "algosdk";
 import './TradingPage.css'
@@ -11,17 +11,39 @@ export default function TradingPage() {
     const { activeAddress, transactionSigner } = useWallet();
 
     type CreateNewPositionArgs = {
-        address: string,
-        signer: TransactionSigner,
-        asset: bigint,
-        depositAmount: bigint,
-        leverage: number
+        address: string | undefined;
+        signer: TransactionSigner | undefined;
+        asset: bigint | undefined;
+        depositAmount: number | undefined;
+        leverage: number | undefined;
     };
-    const [creatingNewPosition, setCreatingNewPosition] = useState<boolean>(false);
-    const [selectingAsset, setSelectingAsset] = useState<boolean>(false);
-    const [selectedAsset, setSelectedAsset] = useState<AsaInfo | undefined>()
-    const [newPositionArgs, setNewPositionArgs] = useState<CreateNewPositionArgs | undefined>();
 
+    const defaultNewPositionArgs: CreateNewPositionArgs = {
+        address: undefined,
+        signer: undefined,
+        asset: undefined,
+        depositAmount: undefined,
+        leverage: undefined
+    }
+
+    const [selectingAsset, setSelectingAsset] = useState<boolean>(false);
+
+    const [creatingNewPosition, setCreatingNewPosition] = useState<boolean>(false);
+    const [selectedAsset, setSelectedAsset] = useState<AsaInfo | undefined>();
+    const [spendableBalance, setSpendableBalance] = useState<number>(0);
+
+    const [newPositionArgs, setNewPositionArgs] = useState<CreateNewPositionArgs>(defaultNewPositionArgs);
+
+
+
+    useEffect(() => {
+        if (!activeAddress || !transactionSigner) return;
+
+        setNewPositionArgs(positionArgs => positionArgs ? { ...positionArgs, address: activeAddress, signer: transactionSigner } : positionArgs)
+        fetchAsaUrlInfo();
+        fetchUsersPositions();
+        fetchUserSpendableBalance();
+    }, []);
 
     type AllAsaInfo = {
         [key: number]: AsaInfo
@@ -39,6 +61,13 @@ export default function TradingPage() {
     };
 
     const [asaInfo, setAsaInfo] = useState<AsaInfo[]>([]);
+
+    const fetchUsersPositions = async () => {
+        if (!activeAddress) return;
+        const userPositions: LeveragedPosition[] = await getUserPositions(activeAddress);
+        setPositions(userPositions);
+        return;
+    };
 
     const fetchAsaUrlInfo = async () => {
         const response = await fetch('https://asa-list.tinyman.org/assets.json');
@@ -62,11 +91,18 @@ export default function TradingPage() {
                 .filter((item) => item !== undefined);
 
         setAsaInfo(filteredData);
-        setSelectedAsset(filteredData[0])
+        setSelectedAsset(filteredData[0]);
+        setNewPositionArgs(positionArgs => positionArgs ? { ...positionArgs, asset: BigInt(filteredData[0].id) } : positionArgs);
     };
 
+    const fetchUserSpendableBalance = async () => {
+        if (!activeAddress) return;
+        const spendableBalance = await getUserSpendableBalance(activeAddress);
+        setSpendableBalance(spendableBalance);
+    }
+
     type Assets = {
-        [key: string]: number
+        [key: string]: number;
     };
 
     const whiteListedAssets: Assets = {
@@ -86,17 +122,8 @@ export default function TradingPage() {
         'Polkagold': 1237529510,
     };
 
-    useEffect(() => {
-        fetchAsaUrlInfo();
-        fetchUsersPositions();
-    }, []);
 
-    const fetchUsersPositions = async () => {
-        if (!activeAddress) return;
-        const userPositions: LeveragedPosition[] = await getUserPositions(activeAddress);
-        setPositions(userPositions);
-        return;
-    };
+
 
     // const createPosition = async () => {
     //     if (!activeAddress) return;
@@ -118,12 +145,14 @@ export default function TradingPage() {
 
                     <div id="gray-background"></div>
                     <div id="create-new-position-modal">
+                        <p className="option-label">Address: {activeAddress?.slice(0, 15)}...</p>
+                        <p className="option-label">Balance: {spendableBalance / 10 ** 6}</p>
                         <div id="asset-selection">
-                            <p>Asset: </p>
+                            {/* <p className="option-label">Asset: </p> */}
                             <div id="asset-options-outer">
                                 <div
                                     id="asset-options-wrapper"
-                                    className={selectingAsset ? "" : "selecting"}
+                                    className={selectingAsset ? "selecting" : ""}
                                     onClick={() => setSelectingAsset(!selectingAsset)}
                                 >
                                     <div id="asset-options">
@@ -134,9 +163,14 @@ export default function TradingPage() {
                                             </div>
                                         </div>
                                         }
-                                        {asaInfo.map((asset) => (
+                                        {asaInfo.map((asset) => 
+                                            asset.id !== selectedAsset?.id && (
                                             <div id="asset-option-wrapper" key={asset.name + 'w'}
-                                            onClick={() => setSelectedAsset(asset)}>
+                                                onClick={() => {
+                                                    setSelectedAsset(asset);
+                                                    setNewPositionArgs(positionArgs => positionArgs ? { ...positionArgs, asset: BigInt(asset.id) } : positionArgs);
+                                                }}
+                                            >
                                                 <div key={asset.name} className="asset-option">
                                                     <img className="asset-icon" src={asset.logo.png} />
                                                     <p>{asset.name}</p>
@@ -146,8 +180,9 @@ export default function TradingPage() {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+
+                        <br />
                     </div>
                 </>
             }

@@ -6,11 +6,11 @@ const LEVY_APP_ID = import.meta.env.VITE_LEVY_APP_ID;
 
 
 export type LeveragedPosition = {
-    userAddress: string,
-    asset: bigint,
-    algoDeposit: bigint,
-    assetAmount: bigint,
-    leverage: bigint
+    userAddress: string;
+    asset: bigint;
+    algoDeposit: bigint;
+    assetAmount: bigint;
+    leverage: bigint;
 };
 
 const getAlgorandClient = (): AlgorandClient => {
@@ -27,8 +27,8 @@ const getLevyAppClient = (algorand: AlgorandClient, activeAddress: string, trans
     );
 };
 
-const leverageBoxNameStruct = ABIType.from('(address,uint64)')
-const leverageBoxValueStruct = ABIType.from('(uint64,uint64,uint8)')
+const leverageBoxNameStruct = ABIType.from('(address,uint64)');
+const leverageBoxValueStruct = ABIType.from('(uint64,uint64,uint8)');
 
 const getUserPositions = async (activeAddress: string): Promise<LeveragedPosition[]> => {
     const algorand = getAlgorandClient();
@@ -57,13 +57,18 @@ const getUserPositions = async (activeAddress: string): Promise<LeveragedPositio
                 assetAmount: assetAmount,
                 leverage: leverage
             };
-        })
+        });
 
         return usersPositionsInfo;
-    }; ''
+    };
     return [];
 };
 
+const getUserSpendableBalance = async (address: string): Promise<number> => {
+    const algorand = getAlgorandClient();
+    const accountInfo = await algorand.account.getInformation(address);
+    return Number(accountInfo.balance.microAlgo - accountInfo.minBalance.microAlgo)
+}
 const createPosition = async (
     activeAddress: string,
     transactionSigner: TransactionSigner,
@@ -72,7 +77,7 @@ const createPosition = async (
     leverage: number
 ): Promise<string> => {
 
-    if (!activeAddress) return ''
+    if (!activeAddress) return '';
 
     const algorand = getAlgorandClient();
     const levyClient = getLevyAppClient(algorand, activeAddress, transactionSigner);
@@ -100,5 +105,6 @@ const createPosition = async (
 
 export {
     getUserPositions,
-    createPosition,
+    getUserSpendableBalance,
+    createPosition
 };
