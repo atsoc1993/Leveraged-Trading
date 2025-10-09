@@ -5,7 +5,7 @@ from dotenv import load_dotenv, set_key
 
 print(f'Creating Leverage App . . .')
 levy_client, deploy_response = levy_factory.send.create.bare()
-print(f'Created Leverage App.')
+print(f'Created Leverage App, App ID: {levy_client.app_id}')
 set_key(
     dotenv_path=dotenv_path, 
     key_to_set='levy_app_id', 

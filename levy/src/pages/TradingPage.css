@@ -1,6 +1,6 @@
 #create-new-position-button {
     position: fixed;
-    top: 15%;
+    top: 25%;
     left: 50%;
     height: 5%;
     min-width: 30%;
@@ -21,12 +21,12 @@
 
 #create-new-position-button:hover {
     height: 7%;
-    min-width: 40%;
+    min-width: 45%;
 }
 
 #disconnect-button {
     position: fixed;
-    top: 4%;
+    top: 8%;
     left: 87%;
     height: 3%;
     min-width: 15%;
@@ -170,7 +170,6 @@
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
-    ;
 }
 
 .leverage-option {
@@ -194,6 +193,12 @@
     background-color: rgb(43, 255, 0);
 }
 
+#balance-algo-icon {
+    width: 20px;
+    margin-left: 5px;
+    height: 20px;
+    align-self: center;
+}
 
 #algo-amounts {
     display: flex;
@@ -274,20 +279,60 @@ button {
 #position-grid {
     position: fixed;
     top: 40%;
+    width: 100%;
     display: grid;
-    justify-self: center;
+    justify-items: center;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 5px #6E8CFB;
+    background-color: #50589C;
+    border-radius: 10px;
+    width: 50%;
+    padding: 5%;
+    border: 1px solid rgb(43, 255, 0);
+
+}
+
+.grid-data {
+    background-color: #6E8CFB;
+    border-radius: 10px;
+    padding: 5%;
+    border: 1px solid rgb(43, 255, 0);
+
+}
+.grid-data-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-image {
+    display: flex;
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    justify-self: center;
 }
 
 #no-positions {
     text-align: center;
 }
 
+.warning-text {
+    color: rgb(235, 49, 49);
+
+}
 @media (max-width: 900px) {
     #create-new-position-modal {
         width: 85%;
     }
     
+    #disconnect-button {
+        left: 80%;
+    }
     .algo-amount-text {
         width: 80%;
         height: 30%;
@@ -299,6 +344,8 @@ button {
     #create-new-position-modal {
         width: 85%;
     }
+
+
 
     .leverage-option {
         padding: 1%;

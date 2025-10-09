@@ -10,7 +10,7 @@ load_dotenv(dotenv_path=dotenv_path)
 levy_app_id = int(os.getenv('levy_app_id'))
 test_asset = int(os.getenv('test_asset'))
 box_name_struct = ABIType.from_string('(address,uint64)')
-box_value_struct = ABIType.from_string('(uint64,uint8,uint64)')
+box_value_struct = ABIType.from_string('(uint64,uint64,uint64,uint8)')
 
 while True:
     time.sleep(3)
@@ -19,7 +19,7 @@ while True:
     levy_boxes = algorand.app.get_box_names(levy_app_id)
     for box in levy_boxes:
         user, asset = box_name_struct.decode(box.name_raw)
-        algo_deposit, leverage, asset_amount = algorand.app.get_box_value_from_abi_type(
+        algo_deposit, asset_amount, asset_decimals, leverage = algorand.app.get_box_value_from_abi_type(
             app_id=levy_app_id, 
             box_name=box.name_raw, 
             abi_type=box_value_struct

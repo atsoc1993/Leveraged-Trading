@@ -8,6 +8,7 @@ class UserLeverageBoxName(Struct):
 class UserLeverageBoxValue(Struct):
     algo_deposit: arc4.UInt64
     asset_amount: arc4.UInt64
+    asset_decimals: arc4.UInt64
     leverage: arc4.UInt8
 
 class Levy(ARC4Contract):
@@ -31,14 +32,23 @@ class Levy(ARC4Contract):
             ).submit()
 
     @abimethod
-    def create_position(self, algo_deposit: gtxn.PaymentTransaction, leverage: arc4.UInt8, asset: arc4.UInt64) -> None:
+    def create_position(
+        self,
+        algo_deposit: gtxn.PaymentTransaction, 
+        leverage: arc4.UInt8, 
+        asset: arc4.UInt64
+    ) -> None:
         self.validate_payment(algo_deposit)
         leverage_amount = algo_deposit.amount * leverage.as_uint64()
         purchased_amount = self.purchase_asset(algo_amount=leverage_amount, asset=asset)
         user_box_name = self.getBoxName(asset)
-        user_box_value = self.getBoxValue(algo_deposit, leverage, purchased_amount)
+        self.no_current_positions_for_this_asset(user_box_name)
+        user_box_value = self.getBoxValue(algo_deposit, purchased_amount, asset, leverage)
         self.user_leveraged_positions[user_box_name] = user_box_value.copy()
 
+    @abimethod
+    def no_current_positions_for_this_asset(self, user_box_name: UserLeverageBoxName) -> None:
+        assert user_box_name not in self.user_leveraged_positions
     @subroutine
     def getBoxName(self, asset: arc4.UInt64) -> UserLeverageBoxName:
         return UserLeverageBoxName(
@@ -47,11 +57,18 @@ class Levy(ARC4Contract):
         )
     
     @subroutine
-    def getBoxValue(self, algo_deposit: gtxn.PaymentTransaction, leverage: arc4.UInt8, purchased_amount: arc4.UInt64) -> UserLeverageBoxValue:
+    def getBoxValue(
+        self, 
+        algo_deposit: gtxn.PaymentTransaction, 
+        purchased_amount: arc4.UInt64, 
+        asset: arc4.UInt64, 
+        leverage: arc4.UInt8
+    ) -> UserLeverageBoxValue:
         return UserLeverageBoxValue(
             algo_deposit=arc4.UInt64(algo_deposit.amount),
-            leverage=leverage,
-            asset_amount=purchased_amount
+            asset_amount=purchased_amount,
+            asset_decimals=arc4.UInt64(Asset(asset.as_uint64()).decimals),
+            leverage=leverage
         )
     
     @subroutine
