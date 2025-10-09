@@ -8,7 +8,7 @@ export default function TradingPage() {
 
     const [positions, setPositions] = useState<LeveragedPosition[]>([])
 
-    const { activeAddress, transactionSigner } = useWallet();
+    const { activeAddress, transactionSigner, activeWallet } = useWallet();
 
     type CreateNewPositionArgs = {
         address: string | undefined;
@@ -136,6 +136,11 @@ export default function TradingPage() {
 
     return (
         <>
+            <div id="disconnect-button"
+            onClick={() => activeWallet?.disconnect()}
+            >
+                Disconnect
+            </div>
             <div id="create-new-position-button"
                 onClick={() => setCreatingNewPosition(true)}
             >
