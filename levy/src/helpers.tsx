@@ -7,7 +7,7 @@ const LEVY_APP_ID = BigInt(import.meta.env.VITE_LEVY_APP_ID);
 export type LeveragedPosition = {
     userAddress: string;
     asset: bigint;
-    assetAmount: bigint;
+    assetAmount: number;
     assetDecimals: bigint;
     algoDeposit: bigint;
     leverage: bigint;
