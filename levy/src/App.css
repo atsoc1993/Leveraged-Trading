@@ -11,6 +11,7 @@ div, p, h1, h2 {
 #root {
   height: 100vh;
   background: linear-gradient(#a01a58 0%, #0091ad);
+  color: white;
 }
 
 * {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { getUserPositions, getUserSpendableBalance, type LeveragedPosition } from "../helpers"
 import { useWallet } from "@txnlab/use-wallet-react";
 import { TransactionSigner } from "algosdk";
@@ -14,20 +14,20 @@ export default function TradingPage() {
         address: string | undefined;
         signer: TransactionSigner | undefined;
         asset: bigint | undefined;
-        depositAmount: number | undefined;
-        leverage: number | undefined;
+        depositAmount: number;
+        leverage: number;
     };
 
     const defaultNewPositionArgs: CreateNewPositionArgs = {
         address: undefined,
         signer: undefined,
         asset: undefined,
-        depositAmount: undefined,
-        leverage: undefined
+        depositAmount: 0,
+        leverage: 2
     }
 
     const [selectingAsset, setSelectingAsset] = useState<boolean>(false);
-
+    const assetOptionsRef = useRef<HTMLDivElement | null>(null);
     const [creatingNewPosition, setCreatingNewPosition] = useState<boolean>(false);
     const [selectedAsset, setSelectedAsset] = useState<AsaInfo | undefined>();
     const [spendableBalance, setSpendableBalance] = useState<number>(0);
@@ -99,6 +99,7 @@ export default function TradingPage() {
         if (!activeAddress) return;
         const spendableBalance = await getUserSpendableBalance(activeAddress);
         setSpendableBalance(spendableBalance);
+        setNewPositionArgs(positionArgs => positionArgs ? { ...positionArgs, depositAmount: spendableBalance / 10 ** 6 } : positionArgs)
     }
 
     type Assets = {
@@ -122,7 +123,7 @@ export default function TradingPage() {
         'Polkagold': 1237529510,
     };
 
-
+    const leverageOptions: number[] = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
     // const createPosition = async () => {
@@ -138,7 +139,7 @@ export default function TradingPage() {
             <div id="create-new-position-button"
                 onClick={() => setCreatingNewPosition(true)}
             >
-                Create New Position
+                Create New Long Position
             </div>
             {creatingNewPosition &&
                 <>
@@ -146,43 +147,96 @@ export default function TradingPage() {
                     <div id="gray-background"></div>
                     <div id="create-new-position-modal">
                         <p className="option-label">Address: {activeAddress?.slice(0, 15)}...</p>
-                        <p className="option-label">Balance: {spendableBalance / 10 ** 6}</p>
+                        <p className="option-label">Balance: {(spendableBalance / 10 ** 6).toLocaleString()}</p>
                         <div id="asset-selection">
                             {/* <p className="option-label">Asset: </p> */}
                             <div id="asset-options-outer">
                                 <div
                                     id="asset-options-wrapper"
                                     className={selectingAsset ? "selecting" : ""}
-                                    onClick={() => setSelectingAsset(!selectingAsset)}
+                                    ref={assetOptionsRef}
+
+                                    onClick={() => {
+                                        setSelectingAsset(!selectingAsset)
+                                    }}
                                 >
                                     <div id="asset-options">
                                         {selectedAsset && <div id="asset-option-wrapper" key={selectedAsset.name + 'w'}>
-                                            <div key={selectedAsset.name} className="asset-option">
+                                            <div key={selectedAsset.name} className="selected-asset-option">
                                                 <img className="asset-icon" src={selectedAsset.logo.png} />
                                                 <p>{selectedAsset.name}</p>
                                             </div>
                                         </div>
                                         }
-                                        {asaInfo.map((asset) => 
+                                        {asaInfo.map((asset) =>
                                             asset.id !== selectedAsset?.id && (
-                                            <div id="asset-option-wrapper" key={asset.name + 'w'}
-                                                onClick={() => {
-                                                    setSelectedAsset(asset);
-                                                    setNewPositionArgs(positionArgs => positionArgs ? { ...positionArgs, asset: BigInt(asset.id) } : positionArgs);
-                                                }}
-                                            >
-                                                <div key={asset.name} className="asset-option">
-                                                    <img className="asset-icon" src={asset.logo.png} />
-                                                    <p>{asset.name}</p>
+                                                <div id="asset-option-wrapper" key={asset.name + 'w'}
+
+                                                    onClick={() => {
+                                                        if (assetOptionsRef.current) {
+                                                            assetOptionsRef.current.scrollTop = 0;
+                                                        };
+                                                        setSelectedAsset(asset);
+                                                        setNewPositionArgs(positionArgs => positionArgs ? { ...positionArgs, asset: BigInt(asset.id) } : positionArgs);
+                                                        setTimeout(() => setSelectingAsset(false), 50);
+                                                    }}
+                                                >
+                                                    <div key={asset.name} className="asset-option">
+                                                        <img className="asset-icon" src={asset.logo.png} />
+                                                        <p>{asset.name}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            ))}
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <br />
+                        <div id="algo-amounts">
+                            <div className="algo-amount">
+                                <p>Purchase Amount</p>
+                                <div className="algo-amount-text">
+                                    <p> {(newPositionArgs.depositAmount ? newPositionArgs.depositAmount : (spendableBalance / 10 ** 6) / 10).toLocaleString()}</p>
+                                    <img className="asset-icon" src="https://asa-list.tinyman.org/assets/0/icon.png"></img>
+                                </div>
+                            </div>
+                            <div className="algo-amount">
+                                <p>Leverage Amount</p>
+                                <div className="algo-amount-text">
+                                    <p>{(newPositionArgs.leverage * (newPositionArgs.depositAmount)).toLocaleString()}</p>
+                                    <img className="asset-icon" src="https://asa-list.tinyman.org/assets/0/icon.png"></img>
+                                </div>
+                            </div>
+                        </div>
+                        <input
+                            id="leverage-amount-bar"
+                            type="range"
+                            defaultValue={(spendableBalance / 10 ** 6)}
+                            max={spendableBalance / 10 ** 6}
+                            min={0}
+                            onChange={(e) => setNewPositionArgs(positionArgs => positionArgs ? { ...positionArgs, depositAmount: Number(e.target.value) } : positionArgs)}
+                        >
+                        </input>
+                        <div id="leverage-options">
+                            {leverageOptions.map((leverageOption) =>
+                                <div className={newPositionArgs.leverage == leverageOption ? "leverage-option selected-leverage" : "leverage-option"}
+                                    onClick={() => setNewPositionArgs(positionArgs => positionArgs ? { ...positionArgs, leverage: leverageOption } : positionArgs)}
+                                >
+                                    {leverageOption}x
+                                </div>
+                            )}
+                        </div>
+                        <div id="submit-or-cancel-options">
+                            <button id="cancel-button"
+                                onClick={async () => {
+                                    setCreatingNewPosition(false);
+                                    setNewPositionArgs(defaultNewPositionArgs);
+                                    setSelectedAsset(asaInfo[0])
+                                    setSelectingAsset(false);
+                                    await fetchUserSpendableBalance();
+                                }}
+                            >Cancel</button>
+                            <button id="submit-button">Buy Long</button>
+                        </div>
                     </div>
                 </>
             }
