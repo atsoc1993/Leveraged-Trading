@@ -14,7 +14,7 @@ export type LeveragedPosition = {
 };
 
 const getAlgorandClient = (): AlgorandClient => {
-    return AlgorandClient.mainNet();
+    return AlgorandClient.testNet();
 };
 
 const getLevyAppClient = (algorand: AlgorandClient, activeAddress: string, transactionSigner: TransactionSigner): LevyClient => {
